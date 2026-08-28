@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/components/layout/Footer';
 import { WebAppJsonLd } from '@/components/seo/JsonLd';
 
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+<GoogleAnalytics gaId="G-44KQ7ELTG7" />
       </body>
     </html>
   );
