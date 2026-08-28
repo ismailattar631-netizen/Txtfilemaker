@@ -45,7 +45,7 @@ export default function GuideArticlePage({
       <ArticleJsonLd
         title={article.title}
         description={article.excerpt}
-        url={`https://txtcraft.pro/guides/${article.slug}`}
+        url={`https://txtcraft.site/guides/${article.slug}`}
         datePublished={article.publishDate}
         authorName={article.author.name}
       />

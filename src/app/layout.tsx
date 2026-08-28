@@ -6,10 +6,10 @@ import Footer from '@/components/layout/Footer';
 import { WebAppJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://txtcraft.pro'),
+  metadataBase: new URL('https://txtcraft.site'),
   title: {
-    default: 'TxtCraft Pro - Professional Plain Text (.txt) File Maker & Studio',
-    template: '%s | TxtCraft Pro',
+    default: 'TxtCraft Free - Professional Plain Text (.txt) File Maker & Studio',
+    template: '%s | TxtCraft',
   },
   description:
     'Free online plain text file maker, editor, batch generator, and converter. Support for UTF-8, UTF-16, ANSI encodings, CRLF/LF line endings, line deduplication, case conversions, and rich templates.',
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     title: 'TxtCraft Pro - Professional Plain Text File Maker & Studio',
     description:
       'Create, edit, format, and batch-generate plain text (.txt) files in your browser with multi-encoding and line-ending controls.',
-    url: 'https://txtcraft.pro',
-    siteName: 'TxtCraft Pro',
+    url: 'https://txtcraft.site',
+    siteName: 'TxtCraft free',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TxtCraft Pro - Plain Text Studio',
+    title: 'TxtCraft Free - Plain Text Studio',
     description: 'Fast, secure online text file maker with batch generation and encoding tools.',
   },
   robots: {

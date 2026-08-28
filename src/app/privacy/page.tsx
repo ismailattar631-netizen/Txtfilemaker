@@ -35,7 +35,7 @@ export default function PrivacyPage() {
 
         <h2 className="text-lg font-bold text-slate-100">3. Contact Us</h2>
         <p>
-          If you have questions regarding this Privacy Policy, you can reach out via privacy@txtcraft.pro.
+          If you have questions regarding this Privacy Policy, you can reach out via privacy@txtcraft.site.
         </p>
       </div>
     </div>

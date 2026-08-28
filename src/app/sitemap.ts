@@ -3,7 +3,7 @@ import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://txtcraft.pro';
+  const baseUrl = 'https://txtcraft.site';
 
   const staticPages = [
     '',

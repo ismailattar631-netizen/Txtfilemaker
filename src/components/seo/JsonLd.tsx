@@ -3,7 +3,7 @@
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
     name: 'TxtCraft Pro',
-    url: 'https://txtcraft.pro',
+    url: 'https://txtcraft.site',
     description: 'Professional online plain text file maker, editor, batch generator, and converter with character encoding options and line ending controls.',
     applicationCategory: 'UtilitiesApplication',
     operatingSystem: 'Any',
@@ -61,7 +61,7 @@ export function ArticleJsonLd({
       name: 'TxtCraft Pro',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://txtcraft.pro/icon.png',
+        url: 'https://txtcraft.site/icon.png',
       },
     },
     mainEntityOfPage: {

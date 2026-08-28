@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/'],
       },
     ],
-    sitemap: 'https://txtcraft.pro/sitemap.xml',
+    sitemap: 'https://txtcraft.site/sitemap.xml',
   };
 }
