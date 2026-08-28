@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { TextStats } from '@/lib/text-utils';
 import { SupportedEncoding, LineEnding } from '@/lib/encodings';
@@ -19,56 +19,56 @@ export default function StatsBar({
   };
 
   return (
-    <div className="w-full bg-slate-900/90 border-t border-slate-800 px-4 py-2.5 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-slate-400 select-none">
+    <div className="w-full bg-slate-50 border-t border-slate-200 dark:bg-slate-900/90 dark:border-slate-800 px-4 py-2.5 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-slate-500 dark:text-slate-400 select-none transition-colors">
       {/* Metrics */}
       <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
         <div className="flex items-center gap-1.5" title="Total characters (including & excluding spaces)">
-          <Hash className="w-3.5 h-3.5 text-teal-400" />
+          <Hash className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
           <span>
-            <strong className="text-slate-200 font-mono">{stats.characters.toLocaleString()}</strong> chars
-            <span className="text-slate-500 text-[11px] ml-1">({stats.charactersNoSpaces.toLocaleString()} no spaces)</span>
+            <strong className="text-slate-800 dark:text-slate-200 font-mono">{stats.characters.toLocaleString()}</strong> chars
+            <span className="text-slate-400 dark:text-slate-500 text-[11px] ml-1">({stats.charactersNoSpaces.toLocaleString()} no spaces)</span>
           </span>
         </div>
 
         <div className="flex items-center gap-1.5" title="Total words">
-          <FileText className="w-3.5 h-3.5 text-emerald-400" />
+          <FileText className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
           <span>
-            <strong className="text-slate-200 font-mono">{stats.words.toLocaleString()}</strong> words
+            <strong className="text-slate-800 dark:text-slate-200 font-mono">{stats.words.toLocaleString()}</strong> words
           </span>
         </div>
 
         <div className="flex items-center gap-1.5" title="Total lines & paragraphs">
-          <AlignLeft className="w-3.5 h-3.5 text-sky-400" />
+          <AlignLeft className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
           <span>
-            <strong className="text-slate-200 font-mono">{stats.lines.toLocaleString()}</strong> lines
-            <span className="text-slate-500 text-[11px] ml-1">({stats.paragraphs} paras)</span>
+            <strong className="text-slate-800 dark:text-slate-200 font-mono">{stats.lines.toLocaleString()}</strong> lines
+            <span className="text-slate-400 dark:text-slate-500 text-[11px] ml-1">({stats.paragraphs} paras)</span>
           </span>
         </div>
 
         <div className="hidden sm:flex items-center gap-1.5" title="Estimated reading and speaking time">
-          <Clock className="w-3.5 h-3.5 text-amber-400" />
+          <Clock className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
           <span>
-            ~<strong className="text-slate-200 font-mono">{stats.readingTimeMinutes}</strong> min read
+            ~<strong className="text-slate-800 dark:text-slate-200 font-mono">{stats.readingTimeMinutes}</strong> min read
           </span>
         </div>
 
         <div className="flex items-center gap-1.5" title="Calculated file byte size in selected encoding">
-          <HardDrive className="w-3.5 h-3.5 text-indigo-400" />
+          <HardDrive className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
           <span>
-            Size: <strong className="text-slate-200 font-mono">{formatBytes(stats.byteSizeUtf8)}</strong>
+            Size: <strong className="text-slate-800 dark:text-slate-200 font-mono">{formatBytes(stats.byteSizeUtf8)}</strong>
           </span>
         </div>
       </div>
 
       {/* Badges */}
       <div className="flex items-center gap-2 text-[11px] font-mono">
-        <span className="px-2 py-0.5 rounded bg-slate-800 text-teal-400 border border-slate-700" title="Selected Line Ending standard">
+        <span className="px-2 py-0.5 rounded bg-white border border-slate-200 text-teal-700 dark:bg-slate-800 dark:text-teal-400 dark:border-slate-700 shadow-sm" title="Selected Line Ending standard">
           {lineEnding}
         </span>
-        <span className="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 border border-slate-700 uppercase" title="Selected character encoding">
+        <span className="px-2 py-0.5 rounded bg-white border border-slate-200 text-emerald-700 dark:bg-slate-800 dark:text-emerald-400 dark:border-slate-700 uppercase shadow-sm" title="Selected character encoding">
           {encoding}
         </span>
-        <span className="hidden md:inline-block px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700" title="Readability grade level">
+        <span className="hidden md:inline-block px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700 shadow-sm" title="Readability grade level">
           {stats.readingGradeLevel}
         </span>
       </div>

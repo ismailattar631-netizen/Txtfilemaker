@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useRef, useEffect, useMemo } from 'react';
 import Toolbar from './Toolbar';
@@ -150,7 +150,7 @@ export default function TxtEditor({
   return (
     <div
       ref={containerRef}
-      className={`rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl transition-all duration-200 flex flex-col ${
+      className={`rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 overflow-hidden shadow-xl transition-all duration-200 flex flex-col ${
         isFullscreen ? 'fixed inset-4 z-50 rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)]' : className
       }`}
       onDragOver={(e) => {
@@ -188,12 +188,14 @@ export default function TxtEditor({
       />
 
       {/* View Options Bar */}
-      <div className="bg-slate-900/60 border-b border-slate-800/80 px-4 py-1.5 flex items-center justify-between text-xs text-slate-400">
+      <div className="bg-slate-50 border-b border-slate-200 px-4 py-1.5 flex items-center justify-between text-xs text-slate-500 dark:bg-slate-900/60 dark:border-slate-800/80 dark:text-slate-400">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setWordWrap(!wordWrap)}
             className={`flex items-center gap-1 px-2 py-0.5 rounded transition-colors ${
-              wordWrap ? 'text-teal-400 bg-teal-500/10' : 'text-slate-400 hover:text-slate-200'
+              wordWrap
+                ? 'text-teal-600 bg-teal-500/10 dark:text-teal-400'
+                : 'text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200'
             }`}
             title="Toggle Word Wrap"
           >
@@ -204,18 +206,18 @@ export default function TxtEditor({
 
         <div className="flex items-center gap-3">
           {/* Font size control */}
-          <div className="flex items-center gap-1 bg-slate-950 px-2 py-0.5 rounded border border-slate-800">
+          <div className="flex items-center gap-1 bg-white dark:bg-slate-950 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800 shadow-sm">
             <button
               onClick={() => setFontSize(Math.max(11, fontSize - 1))}
-              className="hover:text-slate-100"
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
               title="Decrease Font Size"
             >
               <ZoomOut className="w-3.5 h-3.5" />
             </button>
-            <span className="font-mono text-[11px] px-1 text-slate-300">{fontSize}px</span>
+            <span className="font-mono text-[11px] px-1 text-slate-700 dark:text-slate-300">{fontSize}px</span>
             <button
               onClick={() => setFontSize(Math.min(24, fontSize + 1))}
-              className="hover:text-slate-100"
+              className="text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100"
               title="Increase Font Size"
             >
               <ZoomIn className="w-3.5 h-3.5" />
@@ -225,7 +227,7 @@ export default function TxtEditor({
           {/* Fullscreen toggle */}
           <button
             onClick={() => setIsFullscreen(!isFullscreen)}
-            className="flex items-center gap-1 text-slate-400 hover:text-slate-200"
+            className="flex items-center gap-1 text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
             title={isFullscreen ? 'Exit Fullscreen' : 'Fullscreen Mode'}
           >
             {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}
@@ -239,7 +241,7 @@ export default function TxtEditor({
         <div
           ref={lineNumbersRef}
           aria-hidden="true"
-          className="select-none bg-slate-950 text-slate-600 font-mono text-right pr-3 pl-3 pt-3 pb-3 border-r border-slate-800/80 overflow-hidden shrink-0"
+          className="select-none bg-slate-50 text-slate-400 font-mono text-right pr-3 pl-3 pt-3 pb-3 border-r border-slate-200 dark:bg-slate-950 dark:text-slate-600 dark:border-slate-800/80 overflow-hidden shrink-0"
           style={{ fontSize: `${fontSize}px`, lineHeight: '1.5rem', width: '3.5rem' }}
         >
           {lineNumbers.map((n) => (
@@ -263,7 +265,7 @@ export default function TxtEditor({
             whiteSpace: wordWrap ? 'pre-wrap' : 'pre',
             wordBreak: wordWrap ? 'break-word' : 'normal',
           }}
-          className="flex-1 w-full bg-slate-950 text-slate-100 placeholder-slate-600 font-mono p-3 outline-none resize-none overflow-auto custom-scrollbar leading-6"
+          className="flex-1 w-full bg-white text-slate-900 placeholder-slate-400 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-600 font-mono p-3 outline-none resize-none overflow-auto custom-scrollbar leading-6"
         />
       </div>
 

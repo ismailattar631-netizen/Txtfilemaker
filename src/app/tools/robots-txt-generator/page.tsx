@@ -1,7 +1,7 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
-import { Bot, Copy, Download, Check, Plus, Trash2, ShieldAlert, Sparkles } from 'lucide-react';
+import { Bot, Copy, Download, Check, Plus, Trash2 } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
 import { downloadTextFile } from '@/lib/encodings';
 
@@ -102,16 +102,16 @@ export default function RobotsTxtGeneratorPage() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
           <Bot className="w-3.5 h-3.5" />
           SEO Webmaster Crawler Builder
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-slate-100 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
           Robots.txt File Generator
         </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
           Construct an optimized, RFC-compliant robots.txt file to control search engine indexing,
           protect administrative directories, and declare XML sitemaps.
         </p>
@@ -122,9 +122,9 @@ export default function RobotsTxtGeneratorPage() {
         <div className="lg:col-span-7 space-y-6">
           {/* Rules list */}
           {rules.map((rule, rIdx) => (
-            <div key={rIdx} className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-4">
+            <div key={rIdx} className="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 rounded-2xl p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
                   User-Agent Rule #{rIdx + 1}
                 </span>
                 <input
@@ -135,13 +135,13 @@ export default function RobotsTxtGeneratorPage() {
                     next[rIdx].userAgent = e.target.value;
                     setRules(next);
                   }}
-                  className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1 text-xs font-mono text-emerald-400 w-44 focus:outline-none"
+                  className="bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl px-3 py-1 text-xs font-mono text-emerald-600 dark:text-emerald-400 w-44 focus:outline-none shadow-sm"
                 />
               </div>
 
               {/* Disallows */}
               <div>
-                <label className="block text-xs text-slate-400 mb-1.5 font-medium">Disallow Paths</label>
+                <label className="block text-xs text-slate-600 dark:text-slate-400 mb-1.5 font-medium">Disallow Paths</label>
                 <div className="space-y-1.5">
                   {rule.disallow.map((d, dIdx) => (
                     <div key={dIdx} className="flex items-center gap-2">
@@ -153,11 +153,11 @@ export default function RobotsTxtGeneratorPage() {
                           next[rIdx].disallow[dIdx] = e.target.value;
                           setRules(next);
                         }}
-                        className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-200"
+                        className="flex-1 bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-800 dark:text-slate-200 shadow-sm"
                       />
                       <button
                         onClick={() => removeDisallow(rIdx, dIdx)}
-                        className="p-1.5 text-slate-500 hover:text-rose-400 rounded-lg hover:bg-slate-800"
+                        className="p-1.5 text-slate-400 hover:text-rose-600 dark:text-slate-500 dark:hover:text-rose-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
                       </button>
@@ -166,7 +166,7 @@ export default function RobotsTxtGeneratorPage() {
                   <button
                     type="button"
                     onClick={() => addDisallow(rIdx, '/new-disallowed-path/')}
-                    className="text-xs text-emerald-400 hover:underline flex items-center gap-1 pt-1"
+                    className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline flex items-center gap-1 pt-1"
                   >
                     <Plus className="w-3.5 h-3.5" /> Add Disallow Path
                   </button>
@@ -176,8 +176,8 @@ export default function RobotsTxtGeneratorPage() {
           ))}
 
           {/* Sitemaps card */}
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-3">
-            <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+          <div className="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 rounded-2xl p-5 space-y-3">
+            <h3 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
               XML Sitemaps
             </h3>
             <div className="space-y-2">
@@ -191,7 +191,7 @@ export default function RobotsTxtGeneratorPage() {
                       next[smIdx] = e.target.value;
                       setSitemaps(next);
                     }}
-                    className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-200"
+                    className="flex-1 bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-800 dark:text-slate-200 shadow-sm"
                   />
                   <button
                     onClick={() => {
@@ -199,7 +199,7 @@ export default function RobotsTxtGeneratorPage() {
                       next.splice(smIdx, 1);
                       setSitemaps(next);
                     }}
-                    className="p-1.5 text-slate-500 hover:text-rose-400 rounded-lg hover:bg-slate-800"
+                    className="p-1.5 text-slate-400 hover:text-rose-600 dark:text-slate-500 dark:hover:text-rose-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
@@ -211,7 +211,7 @@ export default function RobotsTxtGeneratorPage() {
                   placeholder="https://example.com/sitemap.xml"
                   value={newSitemap}
                   onChange={(e) => setNewSitemap(e.target.value)}
-                  className="flex-1 bg-slate-950 border border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-200"
+                  className="flex-1 bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-800 rounded-xl px-3 py-1.5 text-xs font-mono text-slate-800 dark:text-slate-200 shadow-sm"
                 />
                 <button
                   type="button"
@@ -221,7 +221,7 @@ export default function RobotsTxtGeneratorPage() {
                       setNewSitemap('');
                     }
                   }}
-                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-medium"
+                  className="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 dark:bg-slate-800 dark:border-transparent dark:hover:bg-slate-700 dark:text-slate-200 text-xs font-medium shadow-sm"
                 >
                   Add
                 </button>
@@ -232,20 +232,20 @@ export default function RobotsTxtGeneratorPage() {
 
         {/* Right Preview */}
         <div className="lg:col-span-5 space-y-4">
-          <div className="rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl sticky top-24">
-            <div className="bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-800">
-              <span className="text-xs font-mono text-emerald-400 font-bold">robots.txt Preview</span>
+          <div className="rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 overflow-hidden shadow-xl sticky top-24">
+            <div className="bg-slate-100 dark:bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+              <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold">robots.txt Preview</span>
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleCopy}
-                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200"
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 text-xs font-medium dark:text-slate-200 shadow-sm"
                 >
-                  {copied ? <Check className="w-3.5 h-3.5 text-teal-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
+                  {copied ? <Check className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                   <span>{copied ? 'Copied' : 'Copy'}</span>
                 </button>
                 <button
                   onClick={() => downloadTextFile('robots.txt', outputText)}
-                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold"
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold shadow-sm"
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Download .txt</span>
@@ -253,7 +253,7 @@ export default function RobotsTxtGeneratorPage() {
               </div>
             </div>
 
-            <pre className="p-4 text-xs font-mono text-slate-200 whitespace-pre-wrap max-h-[500px] overflow-y-auto custom-scrollbar leading-relaxed">
+            <pre className="p-4 text-xs font-mono text-slate-800 dark:text-slate-200 whitespace-pre-wrap max-h-[500px] overflow-y-auto custom-scrollbar leading-relaxed">
               {outputText}
             </pre>
           </div>

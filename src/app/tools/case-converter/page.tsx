@@ -1,7 +1,7 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
-import { Type, Copy, Download, Check, RefreshCw } from 'lucide-react';
+import { Type, Copy, Download, Check } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
 import {
   toUpperCase,
@@ -61,16 +61,16 @@ export default function CaseConverterPage() {
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 text-xs font-semibold">
           <Type className="w-3.5 h-3.5" />
           Text Casing & Identifier Suite
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-slate-100 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
           Online Text Case Converter
         </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-2xl">
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
           Instantly convert any text between Title Case, UPPERCASE, lowercase, camelCase, snake_case,
           kebab-case, and Sentence case with real-time character telemetry.
         </p>
@@ -83,9 +83,9 @@ export default function CaseConverterPage() {
             <button
               key={idx}
               onClick={() => setText(action.transform(text))}
-              className="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-amber-500/40 text-left transition-all group"
+              className="p-3 rounded-xl bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:border-amber-500 dark:bg-slate-900/80 dark:border-slate-800 dark:hover:bg-slate-800 dark:hover:border-amber-500/40 text-left transition-all group"
             >
-              <div className="text-xs sm:text-sm font-bold text-slate-200 group-hover:text-amber-400">
+              <div className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400">
                 {action.label}
               </div>
               <div className="text-[11px] text-slate-500 truncate mt-0.5">{action.desc}</div>
@@ -94,22 +94,22 @@ export default function CaseConverterPage() {
         </div>
 
         {/* Text Area Card */}
-        <div className="rounded-2xl border border-slate-800 bg-slate-950 overflow-hidden shadow-2xl">
-          <div className="bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-800">
-            <span className="text-xs font-mono text-slate-400">
+        <div className="rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 overflow-hidden shadow-xl">
+          <div className="bg-slate-100 dark:bg-slate-900 px-4 py-2.5 flex items-center justify-between border-b border-slate-200 dark:border-slate-800">
+            <span className="text-xs font-mono text-slate-600 dark:text-slate-400">
               {stats.characters} Chars | {stats.words} Words | {stats.lines} Lines
             </span>
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopy}
-                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-200 transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:border-slate-700 dark:hover:bg-slate-700 dark:text-slate-200 transition-colors shadow-sm"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-teal-400" /> : <Copy className="w-3.5 h-3.5 text-slate-400" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" /> : <Copy className="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" />}
                 <span>{copied ? 'Copied' : 'Copy'}</span>
               </button>
               <button
                 onClick={() => downloadTextFile('case_converted.txt', text)}
-                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition-colors shadow-sm"
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Download .txt</span>
@@ -122,7 +122,7 @@ export default function CaseConverterPage() {
             onChange={(e) => setText(e.target.value)}
             rows={10}
             placeholder="Type or paste your text here to convert case..."
-            className="w-full bg-slate-950 text-slate-100 p-4 font-mono text-sm outline-none resize-none custom-scrollbar leading-relaxed"
+            className="w-full bg-white text-slate-900 placeholder-slate-400 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-600 p-4 font-mono text-sm outline-none resize-none custom-scrollbar leading-relaxed"
           />
         </div>
       </div>

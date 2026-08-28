@@ -1,8 +1,8 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import JSZip from 'jszip';
-import { Layers, Download, Sparkles, Plus, Trash2, FileText, Check, AlertCircle, FileArchive } from 'lucide-react';
+import { Layers, Download, Sparkles, FileText, Check, FileArchive } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
 import { applyLineEndings, LineEnding } from '@/lib/encodings';
 
@@ -155,17 +155,17 @@ This is an automated batch-generated text document for testing and data pipeline
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
       {/* Header */}
       <div className="space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-400 border border-teal-500/20 text-xs font-semibold">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
           <Layers className="w-3.5 h-3.5" />
           Bulk Text Production Engine
         </div>
-        <h1 className="text-3xl sm:text-4xl font-black text-slate-100 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
           Batch Plain Text (.txt) File Generator
         </h1>
-        <p className="text-slate-400 text-sm sm:text-base max-w-3xl">
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-3xl">
           Instantly generate hundreds of custom text files from templates with dynamic variable tokens.
           Package and download all output files as a single compressed ZIP archive.
         </p>
@@ -175,32 +175,32 @@ This is an automated batch-generated text document for testing and data pipeline
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Left Column: Template & Filename */}
         <div className="lg:col-span-7 space-y-6">
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-4">
-            <h2 className="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
-              <FileText className="w-4 h-4 text-teal-400" />
+          <div className="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 rounded-2xl p-5 space-y-4">
+            <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+              <FileText className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               1. Filename Pattern & Line Endings
             </h2>
 
             <div>
-              <label className="block text-xs font-medium text-slate-400 mb-1">
-                Filename Pattern (use <code className="text-teal-400 font-mono">{'{id}'}</code> or variable names)
+              <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">
+                Filename Pattern (use <code className="text-teal-600 dark:text-teal-400 font-mono">{'{id}'}</code> or variable names)
               </label>
               <input
                 type="text"
                 value={filenamePattern}
                 onChange={(e) => setFilenamePattern(e.target.value)}
-                className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-100 focus:outline-none focus:border-teal-500"
+                className="w-full bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:border-teal-500 shadow-sm"
               />
             </div>
 
             <div className="flex items-center justify-between pt-1 text-xs">
-              <span className="text-slate-400">Target Line Terminators:</span>
-              <div className="flex items-center bg-slate-950 border border-slate-800 rounded-lg p-0.5">
+              <span className="text-slate-600 dark:text-slate-400">Target Line Terminators:</span>
+              <div className="flex items-center bg-slate-100 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 rounded-lg p-0.5 shadow-sm">
                 <button
                   type="button"
                   onClick={() => setLineEnding('LF')}
                   className={`px-3 py-1 rounded transition-colors ${
-                    lineEnding === 'LF' ? 'bg-teal-500/20 text-teal-300 font-semibold' : 'text-slate-400'
+                    lineEnding === 'LF' ? 'bg-teal-500/20 text-teal-700 dark:text-teal-300 font-semibold' : 'text-slate-600 dark:text-slate-400'
                   }`}
                 >
                   LF (Linux/macOS)
@@ -209,7 +209,7 @@ This is an automated batch-generated text document for testing and data pipeline
                   type="button"
                   onClick={() => setLineEnding('CRLF')}
                   className={`px-3 py-1 rounded transition-colors ${
-                    lineEnding === 'CRLF' ? 'bg-teal-500/20 text-teal-300 font-semibold' : 'text-slate-400'
+                    lineEnding === 'CRLF' ? 'bg-teal-500/20 text-teal-700 dark:text-teal-300 font-semibold' : 'text-slate-600 dark:text-slate-400'
                   }`}
                 >
                   CRLF (Windows)
@@ -218,9 +218,9 @@ This is an automated batch-generated text document for testing and data pipeline
             </div>
           </div>
 
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-4">
-            <h2 className="text-sm font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
-              <FileText className="w-4 h-4 text-emerald-400" />
+          <div className="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 rounded-2xl p-5 space-y-4">
+            <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider flex items-center gap-2">
+              <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               2. Content Template
             </h2>
 
@@ -229,15 +229,15 @@ This is an automated batch-generated text document for testing and data pipeline
               onChange={(e) => setContentTemplate(e.target.value)}
               rows={8}
               placeholder="Enter your document template..."
-              className="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs sm:text-sm font-mono text-slate-100 focus:outline-none focus:border-teal-500 custom-scrollbar leading-relaxed"
+              className="w-full bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl p-3 text-xs sm:text-sm font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:border-teal-500 custom-scrollbar leading-relaxed shadow-sm"
             />
           </div>
         </div>
 
         {/* Right Column: Generation Mode & Action */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 space-y-4">
-            <h2 className="text-sm font-bold text-slate-200 uppercase tracking-wider">
+          <div className="bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 rounded-2xl p-5 space-y-4">
+            <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
               3. Data Generation Mode
             </h2>
 
@@ -247,8 +247,8 @@ This is an automated batch-generated text document for testing and data pipeline
                 onClick={() => setMode('sequence')}
                 className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${
                   mode === 'sequence'
-                    ? 'bg-teal-500/10 text-teal-400 border-teal-500/40'
-                    : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
+                    ? 'bg-teal-500/10 text-teal-700 dark:text-teal-400 border-teal-500/40'
+                    : 'bg-slate-50 text-slate-600 border-slate-200 hover:border-slate-300 dark:bg-slate-950 dark:text-slate-400 dark:border-slate-800'
                 }`}
               >
                 Sequential Numbering
@@ -258,8 +258,8 @@ This is an automated batch-generated text document for testing and data pipeline
                 onClick={() => setMode('csv')}
                 className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all ${
                   mode === 'csv'
-                    ? 'bg-teal-500/10 text-teal-400 border-teal-500/40'
-                    : 'bg-slate-950 text-slate-400 border-slate-800 hover:border-slate-700'
+                    ? 'bg-teal-500/10 text-teal-700 dark:text-teal-400 border-teal-500/40'
+                    : 'bg-slate-50 text-slate-600 border-slate-200 hover:border-slate-300 dark:bg-slate-950 dark:text-slate-400 dark:border-slate-800'
                 }`}
               >
                 CSV / Custom Dataset
@@ -270,47 +270,47 @@ This is an automated batch-generated text document for testing and data pipeline
               <div className="space-y-3 pt-2">
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs text-slate-400 mb-1">Start Number</label>
+                    <label className="block text-xs text-slate-600 dark:text-slate-400 mb-1">Start Number</label>
                     <input
                       type="number"
                       value={startNum}
                       onChange={(e) => setStartNum(parseInt(e.target.value) || 1)}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 font-mono"
+                      className="w-full bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-slate-100 font-mono shadow-sm"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs text-slate-400 mb-1">File Count (Max 500)</label>
+                    <label className="block text-xs text-slate-600 dark:text-slate-400 mb-1">File Count (Max 500)</label>
                     <input
                       type="number"
                       value={count}
                       onChange={(e) => setCount(parseInt(e.target.value) || 1)}
                       max={500}
                       min={1}
-                      className="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-100 font-mono"
+                      className="w-full bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-900 dark:text-slate-100 font-mono shadow-sm"
                     />
                   </div>
                 </div>
 
-                <label className="flex items-center gap-2 text-xs text-slate-300 cursor-pointer pt-1">
+                <label className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-300 cursor-pointer pt-1">
                   <input
                     type="checkbox"
                     checked={padZeroes}
                     onChange={(e) => setPadZeroes(e.target.checked)}
-                    className="rounded border-slate-700 text-teal-500 focus:ring-0 bg-slate-950"
+                    className="rounded border-slate-300 text-teal-600 focus:ring-0 bg-slate-50 dark:bg-slate-950 dark:border-slate-700"
                   />
                   Pad numbers with leading zeroes (e.g. 001, 002)
                 </label>
               </div>
             ) : (
               <div className="space-y-2 pt-2">
-                <label className="block text-xs text-slate-400">
+                <label className="block text-xs text-slate-600 dark:text-slate-400">
                   Paste CSV Data (First row = variable headers)
                 </label>
                 <textarea
                   value={csvData}
                   onChange={(e) => setCsvData(e.target.value)}
                   rows={6}
-                  className="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-xs font-mono text-slate-100 focus:outline-none focus:border-teal-500 custom-scrollbar"
+                  className="w-full bg-slate-50 border border-slate-300 dark:bg-slate-950 dark:border-slate-700 rounded-xl p-3 text-xs font-mono text-slate-900 dark:text-slate-100 focus:outline-none focus:border-teal-500 custom-scrollbar shadow-sm"
                 />
               </div>
             )}
@@ -328,13 +328,13 @@ This is an automated batch-generated text document for testing and data pipeline
 
           {/* Output Summary & ZIP Download */}
           {generatedFiles.length > 0 && (
-            <div className="bg-slate-900/80 border border-teal-500/30 rounded-2xl p-5 space-y-4 animate-in fade-in duration-200">
+            <div className="bg-white border border-teal-500/30 shadow-md dark:bg-slate-900/80 dark:border-teal-500/30 rounded-2xl p-5 space-y-4 animate-in fade-in duration-200">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="font-bold text-slate-100 text-sm">
+                  <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">
                     {generatedFiles.length} Files Ready
                   </h3>
-                  <span className="text-xs text-teal-400">
+                  <span className="text-xs text-teal-600 dark:text-teal-400">
                     Compiled in memory ({lineEnding} line endings)
                   </span>
                 </div>
@@ -342,7 +342,7 @@ This is an automated batch-generated text document for testing and data pipeline
                   type="button"
                   onClick={handleDownloadZip}
                   disabled={isGenerating}
-                  className="py-2 px-4 rounded-xl bg-teal-400 hover:bg-teal-300 text-slate-950 text-xs font-bold shadow-md shadow-teal-500/20 flex items-center gap-1.5 transition-all"
+                  className="py-2 px-4 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs font-bold shadow-md shadow-teal-500/20 flex items-center gap-1.5 transition-all"
                 >
                   <FileArchive className="w-4 h-4" />
                   Download ZIP
@@ -350,8 +350,8 @@ This is an automated batch-generated text document for testing and data pipeline
               </div>
 
               {downloadSuccess && (
-                <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/30 text-xs text-teal-300 flex items-center gap-2">
-                  <Check className="w-4 h-4 text-teal-400" />
+                <div className="p-3 rounded-xl bg-teal-500/10 border border-teal-500/30 text-xs text-teal-700 dark:text-teal-300 flex items-center gap-2">
+                  <Check className="w-4 h-4 text-teal-600 dark:text-teal-400" />
                   ZIP archive downloaded successfully!
                 </div>
               )}
@@ -360,14 +360,14 @@ This is an automated batch-generated text document for testing and data pipeline
                 {generatedFiles.slice(0, 15).map((file, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-2 rounded-lg bg-slate-950 border border-slate-800 text-xs"
+                    className="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-200 dark:bg-slate-950 dark:border-slate-800 text-xs"
                   >
-                    <span className="font-mono text-slate-300 truncate max-w-[200px]">
+                    <span className="font-mono text-slate-700 dark:text-slate-300 truncate max-w-[200px]">
                       {file.filename}
                     </span>
                     <button
                       onClick={() => downloadSingleFile(file)}
-                      className="text-slate-400 hover:text-teal-400 p-1"
+                      className="text-slate-500 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-400 p-1"
                       title="Download this file"
                     >
                       <Download className="w-3.5 h-3.5" />
