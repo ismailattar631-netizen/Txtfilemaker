@@ -38,6 +38,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors font-medium">
+                  TXT File Maker
+                </Link>
+              </li>
+              <li>
                 <Link href="/tools/batch-generator" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                   Batch TXT Generator
                 </Link>

@@ -20,18 +20,23 @@ import {
   Bot,
   FileCode,
   GitCompare,
+  FileText,
+  Lock,
+  Download,
+  Smartphone,
 } from 'lucide-react';
 
 const SAMPLE_TEXT = `========================================================================
-                      WELCOME TO TXTCRAFT PRO
-            The High-Performance Plain Text (.txt) Studio
+                      WELCOME TO TXTCRAFT
+            Online TXT File Maker & Plain Text Studio
 ========================================================================
 
-TxtCraft Pro is a fast, full-featured online workspace designed for 
-developers, webmasters, writers, and data specialists.
+TxtCraft is a fast, free online notepad and text-to-file creator designed
+for developers, webmasters, writers, students, and data specialists.
 
 [KEY CAPABILITIES]
-* Real-time metrics: Character counts, word tally, line count & exact bytes
+* Create & Download: Write notes and download clean .txt files with 1 click
+* Real-time Metrics: Character count, word tally, line count & exact byte size
 * Custom Encodings : UTF-8, UTF-8 with BOM, UTF-16LE, Windows-1252 & ASCII
 * Line Endings     : Seamless toggle between Windows CRLF (\\r\\n) & Unix LF (\\n)
 * Line Manipulation: Sort alphabetically, remove duplicates, trim whitespace
@@ -41,7 +46,7 @@ developers, webmasters, writers, and data specialists.
 [GET STARTED]
 1. Edit or replace this text directly in the monospace editor above.
 2. Choose your preferred file name, encoding, and line ending in the toolbar.
-3. Click "Download .txt" (or press Ctrl+S) to save instantly to your computer.
+3. Click "Download" (or press Ctrl+S) to save instantly to your computer.
 4. Try loading ready-to-use templates like robots.txt or README below!
 ========================================================================`;
 
@@ -59,24 +64,34 @@ export default function HomePage() {
 
   const homeFaqs = [
     {
-      question: 'What is TxtCraft Pro?',
-      answer: 'TxtCraft Pro is a professional browser-based plain text file maker and manipulation studio. It enables users to create, format, clean, convert, and batch-produce .txt files with precision encoding and line-ending controls.',
+      question: 'What is a TXT file maker?',
+      answer:
+        'A TXT file maker is a browser-based text editor and online notepad that allows you to type or paste text and instantly convert it into a downloadable plain text (.txt) file with your chosen character encoding and line terminators.',
     },
     {
-      question: 'Are my text files uploaded or stored on any server?',
-      answer: 'No! When using the standard TxtCraft text editor and client tools, 100% of the processing happens directly in your browser using modern Web APIs. Your text never leaves your device unless you explicitly invoke backend streaming endpoints.',
+      question: 'How do I create and download a text file online?',
+      answer:
+        'Write or paste your content in the editor above, specify a filename (e.g. document.txt), choose your character encoding (UTF-8, ANSI, UTF-16) and line endings (CRLF or LF), and click "Download" or press Ctrl+S to save your .txt file directly to your device.',
+    },
+    {
+      question: 'Are my notes and text files uploaded to any server?',
+      answer:
+        'No! 100% of the text editing, formatting, and file generation processes take place locally inside your web browser. Your text never leaves your device and is never stored on external servers.',
     },
     {
       question: 'Can I choose between Windows CRLF and Linux LF line breaks?',
-      answer: 'Yes. The status bar and toolbar include an instant line-ending switch between Windows CRLF (\\r\\n) and Unix/Linux/macOS LF (\\n), eliminating cross-platform shell script errors.',
+      answer:
+        'Yes. The toolbar and status bar include an instant line-ending switch between Windows CRLF (\\r\\n) and Unix/Linux/macOS LF (\\n), preventing syntax errors when deploying scripts across different operating systems.',
     },
     {
-      question: 'How do I generate text files in bulk?',
-      answer: 'Visit our dedicated Batch TXT Generator tool. You can define a custom pattern with placeholder tokens (such as {id} or {name}) and generate hundreds of unique text files compiled into a single downloadable .ZIP archive.',
+      question: 'How do I generate multiple text files in bulk?',
+      answer:
+        'You can use our dedicated Batch TXT Generator tool to define dynamic templates with variable tokens (like {id} or {name}) and produce hundreds of custom text files bundled into a single ZIP download.',
     },
     {
       question: 'What character encodings are supported?',
-      answer: 'TxtCraft Pro supports standard UTF-8, UTF-8 with Byte Order Mark (BOM for legacy Excel/Notepad), UTF-16LE, UTF-16BE, Windows-1252 (ANSI), and 7-bit ASCII.',
+      answer:
+        'TxtCraft supports standard UTF-8, UTF-8 with Byte Order Mark (BOM for legacy Excel/Notepad), UTF-16LE, UTF-16BE, Windows-1252 (ANSI), and 7-bit ASCII.',
     },
   ];
 
@@ -88,17 +103,17 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            Next-Generation Plain Text Studio & Generator
+            Free Online Notepad & Text to File Creator
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
-            Create, Edit & Batch Generate{' '}
+            TXT File Maker –{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
-              Plain Text (.txt) Files
+              Create & Download Text Files
             </span>
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            The ultra-fast online text file maker. Precision encoding support (UTF-8, UTF-16, ANSI),
-            CRLF/LF line endings, deduplication, regex find-and-replace, and instant batch exports.
+            The ultra-fast online notepad and text to file creator. Write plain text, choose custom encodings
+            (UTF-8, ANSI, UTF-16), switch CRLF/LF line endings, and download .txt files with 1 click.
           </p>
         </div>
       </section>
@@ -135,23 +150,89 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 3-Step How-To Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            How to Make a Text File Online in 3 Steps
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
+            Create, format, and save your plain text (.txt) document without installing desktop apps.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black text-lg">
+              1
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Write or Paste in Notepad
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Enter your plain text, code, notes, or configuration into the editor with real-time character and word count tracking.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg">
+              2
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Select Encoding & Format
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Choose your filename, character encoding (UTF-8, UTF-16, ANSI), and switch line breaks between Windows CRLF and Unix LF.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-lg">
+              3
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Download .TXT File
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Click the Download button (or press Ctrl+S) to instantly save your clean, ready-to-use .txt file to your device.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Specialized Tool Cards Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
             Specialized Text Processing Suites
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            Dedicated tools optimized for specific plain text generation and formatting workflows.
+            Dedicated utilities optimized for specific plain text creation and formatting workflows.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <Link
-            href="/tools/batch-generator"
+            href="/tools/txt-file-maker"
             className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-xl hover:shadow-teal-500/5 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/50 transition-all"
           >
             <div className="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <FileText className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors flex items-center justify-between">
+              TXT File Maker Page
+              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Standalone full-screen text editor & online notepad for creating and downloading custom .txt files.
+            </p>
+          </Link>
+
+          <Link
+            href="/tools/batch-generator"
+            className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-xl hover:shadow-teal-500/5 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/50 transition-all"
+          >
+            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
               <Layers className="w-6 h-6" />
             </div>
             <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors flex items-center justify-between">
@@ -159,7 +240,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Generate 1 to 500+ text files simultaneously using dynamic variable substitution and download directly as a ZIP archive.
+              Generate 1 to 500+ text files simultaneously using dynamic variable substitution and download as a ZIP.
             </p>
           </Link>
 
@@ -175,7 +256,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Transform strings instantly into UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case, and CONSTANT_CASE.
+              Transform strings instantly into UPPERCASE, lowercase, Title Case, camelCase, snake_case, and kebab-case.
             </p>
           </Link>
 
@@ -191,7 +272,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Sort lines alphabetically (A-Z / Z-A), remove duplicate lines, trim whitespace, and add prefix/suffix counters to all lines.
+              Sort lines alphabetically (A-Z / Z-A), remove duplicate lines, trim whitespace, and add line numbers.
             </p>
           </Link>
 
@@ -207,7 +288,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Visual generator for search engine crawler directives, Disallow rules, crawl delays, and XML sitemap declarations.
+              Visual generator for search engine crawler directives, Disallow rules, crawl delays, and XML sitemaps.
             </p>
           </Link>
 
@@ -223,23 +304,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Strip Markdown symbols, HTML tags, and rich formatting from blog articles or documentation into clean plain text.
-            </p>
-          </Link>
-
-          <Link
-            href="/tools/diff-checker"
-            className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-xl hover:shadow-teal-500/5 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/50 transition-all"
-          >
-            <div className="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-              <GitCompare className="w-6 h-6" />
-            </div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors flex items-center justify-between">
-              Text Diff Checker
-              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Compare two plain text documents side-by-side to highlight added, removed, and modified lines instantly.
+              Strip Markdown syntax, HTML tags, and rich formatting from blog articles or documentation into clean text.
             </p>
           </Link>
         </div>

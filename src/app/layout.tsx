@@ -3,48 +3,54 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/components/layout/Footer';
-import { WebAppJsonLd } from '@/components/seo/JsonLd';
+import { WebAppJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://txtcraft.site'),
   title: {
-    default: 'TxtCraft Free - Professional Plain Text (.txt) File Maker & Studio',
+    default: 'TXT File Maker - Create & Download Text Files Online | TxtCraft',
     template: '%s | TxtCraft',
   },
   description:
-    'Free online plain text file maker, editor, batch generator, and converter. Support for UTF-8, UTF-16, ANSI encodings, CRLF/LF line endings, line deduplication, case conversions, and rich templates.',
+    'Free online TXT file maker & notepad. Create, edit, format, and download plain text (.txt) files in your browser. Supports UTF-8, ANSI, and CRLF/LF line endings.',
   keywords: [
     'txt file maker',
-    'online text editor',
-    'batch txt generator',
     'create text file online',
-    'crlf to lf converter',
+    'online notepad',
+    'text to file',
+    'download txt file',
+    'plain text editor online',
+    'browser notepad',
+    'generate txt file',
+    'text to file maker',
+    'convert text to txt',
     'utf-8 text creator',
-    'robots txt generator',
-    'plain text templates',
-    'remove duplicate lines online',
+    'crlf to lf converter',
+    'batch txt generator',
+    'free online text editor',
+    'save text as txt',
   ],
-  authors: [{ name: 'TxtCraft Pro Team' }],
-  creator: 'TxtCraft Pro',
-  publisher: 'TxtCraft Pro',
+  authors: [{ name: 'TxtCraft Team' }],
+  creator: 'TxtCraft',
+  publisher: 'TxtCraft',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'TxtCraft Pro - Professional Plain Text File Maker & Studio',
+    title: 'TXT File Maker - Create & Download Text Files Online',
     description:
-      'Create, edit, format, and batch-generate plain text (.txt) files in your browser with multi-encoding and line-ending controls.',
+      'Write, edit, and download plain text (.txt) files instantly in your browser. 100% client-side privacy, multi-encoding support, and line-ending controls.',
     url: 'https://txtcraft.site',
-    siteName: 'TxtCraft free',
+    siteName: 'TxtCraft',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TxtCraft Free - Plain Text Studio',
-    description: 'Fast, secure online text file maker with batch generation and encoding tools.',
+    title: 'TXT File Maker - Create & Download Text Files Online',
+    description: 'Fast, secure online notepad and text to file creator with instant .txt download.',
   },
   robots: {
     index: true,
@@ -86,6 +92,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-teal-500/30 selection:text-teal-900 dark:selection:text-teal-200 transition-colors duration-200">
         <WebAppJsonLd />
+        <HowToJsonLd />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

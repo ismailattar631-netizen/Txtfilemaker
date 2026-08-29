@@ -26,6 +26,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const toolLinks = [
+    { href: '/tools/txt-file-maker', label: 'TXT File Maker', desc: 'Create, edit & download .txt files online', icon: FileText },
     { href: '/tools/batch-generator', label: 'Batch TXT Generator', desc: 'Bulk generate multiple text files & zip', icon: Layers },
     { href: '/tools/case-converter', label: 'Case Converter', desc: 'UPPER, lower, Title, camelCase, snake_case', icon: Type },
     { href: '/tools/line-tools', label: 'Line Tools & Sorter', desc: 'Sort A-Z, deduplicate, prefix/suffix, number', icon: ListTree },
