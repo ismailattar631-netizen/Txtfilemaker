@@ -21,7 +21,7 @@ import { downloadTextFile } from '@/lib/encodings';
 
 export default function CaseConverterPage() {
   const [text, setText] = useState(
-    'The quick brown fox jumps over the lazy dog. TXTCRAFT Pro provides precision string transformations!'
+    'The quick brown fox jumps over the lazy dog. TXTCRAFT provides precision string transformations!'
   );
   const [copied, setCopied] = useState(false);
 

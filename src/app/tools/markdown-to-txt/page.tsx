@@ -8,7 +8,7 @@ import { downloadTextFile } from '@/lib/encodings';
 export default function MarkdownToTxtPage() {
   const [input, setInput] = useState(`# Project Documentation Overview
 
-Welcome to **TxtCraft Pro**! This document explains how to *cleanly strip* formatting from text.
+Welcome to **TxtCraft**! This document explains how to *cleanly strip* formatting from text.
 
 ## Core Features
 - [x] Fast client-side conversion

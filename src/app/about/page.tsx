@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { FileText, Shield, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About TxtCraft Pro - High Performance Plain Text Studio',
-  description: 'Learn about the mission, engineering philosophy, and privacy-first architecture of TxtCraft Pro.',
+  title: 'About TxtCraft - High Performance Plain Text Studio',
+  description: 'Learn about the mission, engineering philosophy, and privacy-first architecture of TxtCraft.',
 };
 
 export default function AboutPage() {
@@ -15,10 +15,10 @@ export default function AboutPage() {
           Our Mission & Standards
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-          About TxtCraft Pro
+          About TxtCraft
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-          TxtCraft Pro was created with a single objective: to build the most versatile, high-precision,
+          TxtCraft was created with a single objective: to build the most versatile, high-precision,
           and privacy-respecting plain text workspace on the web.
         </p>
       </div>

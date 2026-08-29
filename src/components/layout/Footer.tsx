@@ -13,7 +13,7 @@ export default function Footer() {
                 <FileText className="w-5 h-5 text-slate-950 font-bold" />
               </div>
               <span className="font-bold text-xl text-slate-900 dark:text-slate-100 tracking-tight">
-                TxtCraft <span className="text-teal-600 dark:text-teal-400 font-mono text-sm">PRO</span>
+                TxtCraft
               </span>
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed">
@@ -153,7 +153,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2">
             <Terminal className="w-4 h-4 text-teal-600 dark:text-teal-500" />
-            <span>&copy; {new Date().getFullYear()} TxtCraft Pro. High-performance plain text tools.</span>
+            <span>&copy; {new Date().getFullYear()} TxtCraft. High-performance plain text tools.</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">

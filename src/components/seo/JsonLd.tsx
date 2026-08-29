@@ -128,7 +128,7 @@ export function ArticleJsonLd({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'TxtCraft Pro',
+      name: 'TxtCraft',
       logo: {
         '@type': 'ImageObject',
         url: 'https://txtcraft.site/icon.png',

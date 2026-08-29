@@ -23,7 +23,7 @@ export async function generateMetadata({
     description: template.description,
     keywords: [...template.tags, 'plain text template', 'txt maker', template.defaultFilename],
     openGraph: {
-      title: `${template.title} - TxtCraft Pro`,
+      title: `${template.title} - TxtCraft`,
       description: template.description,
       type: 'article',
     },

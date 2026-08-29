@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - TxtCraft Pro',
+  title: 'Privacy Policy - TxtCraft',
   description: 'Our privacy commitment: zero tracking, client-side data isolation, and full transparency.',
 };
 
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
 
       <div className="space-y-6 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
         <p>
-          At <strong className="text-slate-900 dark:text-slate-100">TxtCraft Pro</strong>, we believe privacy is a fundamental human right.
+          At <strong className="text-slate-900 dark:text-slate-100">TxtCraft</strong>, we believe privacy is a fundamental human right.
           This Privacy Policy outlines how our tools handle your text files and information.
         </p>
 

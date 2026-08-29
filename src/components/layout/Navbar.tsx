@@ -46,7 +46,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-lg text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors flex items-center gap-1.5">
-                TxtCraft <span className="text-xs px-1.5 py-0.5 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 font-mono">PRO</span>
+                TxtCraft
               </span>
               <span className="text-[10px] text-slate-500 dark:text-slate-400 hidden sm:block -mt-1">Online Text Studio</span>
             </div>
