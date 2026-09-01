@@ -1,8 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Type, Copy, Download, Check } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import {
   toUpperCase,
   toLowerCase,
@@ -62,6 +71,27 @@ export default function CaseConverterPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Text Case Converter', url: 'https://txtcraft.site/tools/case-converter' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Text Case Converter</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 text-xs font-semibold">
           <Type className="w-3.5 h-3.5" />
@@ -126,6 +156,28 @@ export default function CaseConverterPage() {
           />
         </div>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="More Text Transformation Tools"
+        subtitle="Sort lines, remove duplicates, or compare different versions of your text."
+        excludeHref="/tools/case-converter"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Popular Plain Text Templates"
+        subtitle="Load pre-formatted developer templates and convert strings as needed."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Plain Text Guides & Standards"
+        subtitle="Read in-depth articles on text formatting, typography, and machine readability."
+        articles={ARTICLES.slice(0, 3)}
+      />
 
       <FaqSection faqs={faqs} />
     </div>

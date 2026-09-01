@@ -1,8 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ListTree, Copy, Download, Check } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import {
   sortLines,
   reverseLines,
@@ -57,6 +66,27 @@ Epsilon Cloud`);
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Line Tools & Sorter', url: 'https://txtcraft.site/tools/line-tools' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Line Tools & Sorter</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20 text-xs font-semibold">
           <ListTree className="w-3.5 h-3.5" />
@@ -208,6 +238,28 @@ Epsilon Cloud`);
           className="w-full bg-white text-slate-900 placeholder-slate-400 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-600 p-4 font-mono text-sm outline-none resize-none custom-scrollbar leading-relaxed"
         />
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="More Specialized Text Utilities"
+        subtitle="Compare document differences, transform word casing, or batch-generate text files."
+        excludeHref="/tools/line-tools"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Text Templates for Lists & Task Management"
+        subtitle="Load pre-structured templates such as TODO.txt, meeting notes, and system specs."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Guides on Line Formatting & DevOps Standards"
+        subtitle="Understand CRLF vs LF line endings and best practices for shell script compatibility."
+        articles={ARTICLES.slice(0, 3)}
+      />
 
       <FaqSection faqs={faqs} />
     </div>

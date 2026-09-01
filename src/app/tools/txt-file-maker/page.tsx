@@ -4,6 +4,12 @@ import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
 import { BreadcrumbJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import {
   FileText,
   Download,
@@ -296,6 +302,28 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
           </div>
         </div>
       </section>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Explore More Specialized Text Tools"
+        subtitle="Process strings, sort lines, build robots.txt files, or batch-produce documents."
+        excludeHref="/tools/txt-file-maker"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Ready-to-Use Plain Text Templates"
+        subtitle="Load pre-built templates directly into the editor for instant customization."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Recommended Plain Text Guides"
+        subtitle="Learn how to handle line endings, Unicode encodings, and shell script compatibility."
+        articles={ARTICLES.slice(0, 3)}
+      />
 
       {/* FAQ Section */}
       <FaqSection

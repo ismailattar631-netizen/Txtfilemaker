@@ -5,6 +5,8 @@ import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
 import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import { RelatedGuidesSection } from '@/components/seo/InternalLinks';
 import {
   Sparkles,
   Layers,
@@ -307,6 +309,22 @@ export default function HomePage() {
               Strip Markdown syntax, HTML tags, and rich formatting from blog articles or documentation into clean text.
             </p>
           </Link>
+
+          <Link
+            href="/tools/diff-checker"
+            className="group p-6 rounded-2xl bg-white border border-slate-200 hover:border-teal-500 shadow-sm hover:shadow-xl hover:shadow-teal-500/5 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/50 transition-all"
+          >
+            <div className="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <GitCompare className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors flex items-center justify-between">
+              Text Diff Checker
+              <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+              Compare two plain text documents side-by-side to visually inspect additions, deletions, and edits.
+            </p>
+          </Link>
         </div>
       </section>
 
@@ -379,6 +397,15 @@ export default function HomePage() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Internal Linking: Featured Technical Guides */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <RelatedGuidesSection
+          title="Authoritative Plain Text Guides"
+          subtitle="Explore our comprehensive tutorials on character sets, line terminators, and developer workflows."
+          articles={ARTICLES.slice(0, 3)}
+        />
       </section>
 
       {/* FAQ Section */}

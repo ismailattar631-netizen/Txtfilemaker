@@ -3,7 +3,16 @@
 import { useState } from 'react';
 import JSZip from 'jszip';
 import { Layers, Download, Sparkles, FileText, Check, FileArchive } from 'lucide-react';
+import Link from 'next/link';
 import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import { applyLineEndings, LineEnding } from '@/lib/encodings';
 
 export default function BatchGeneratorPage() {
@@ -156,6 +165,27 @@ This is an automated batch-generated text document for testing and data pipeline
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Batch TXT Generator', url: 'https://txtcraft.site/tools/batch-generator' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Batch TXT Generator</span>
+      </div>
+
       {/* Header */}
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
@@ -384,6 +414,28 @@ This is an automated batch-generated text document for testing and data pipeline
           )}
         </div>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="More Essential Text Utilities"
+        subtitle="Combine your batch generation with line sorting, string transformation, and plain text creation."
+        excludeHref="/tools/batch-generator"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Compatible Plain Text Templates"
+        subtitle="Use these templates as base blueprints for your batch generation pipelines."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Guides on Batch Text Automation"
+        subtitle="Learn how to optimize high-volume plain text workflows and avoid common errors."
+        articles={ARTICLES.slice(0, 3)}
+      />
 
       <FaqSection faqs={batchFaqs} />
     </div>

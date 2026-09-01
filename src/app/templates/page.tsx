@@ -3,7 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
 import { FolderOpen, Search, Download, ExternalLink } from 'lucide-react';
+import { RelatedToolsSection, RelatedGuidesSection } from '@/components/seo/InternalLinks';
 import { downloadTextFile } from '@/lib/encodings';
 
 export default function TemplatesPage() {
@@ -128,6 +130,19 @@ export default function TemplatesPage() {
           </div>
         ))}
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Specialized Plain Text Tools"
+        subtitle="Edit, sort, convert case, and generate text files directly in your browser."
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Technical Guides & Documentation Standards"
+        subtitle="Master plain text formatting, character encodings, and file management."
+        articles={ARTICLES.slice(0, 3)}
+      />
     </div>
   );
 }

@@ -1,7 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { FileCode, Copy, Download, Check } from 'lucide-react';
+import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import { stripMarkdown, stripHtmlTags, computeTextStats } from '@/lib/text-utils';
 import { downloadTextFile } from '@/lib/encodings';
 
@@ -35,8 +45,42 @@ console.log("Hello from code block!");
     } catch {}
   };
 
+  const faqs = [
+    {
+      question: 'How does Markdown to Plain Text conversion work?',
+      answer:
+        'The tool parses Markdown syntax tokens (such as headers #, bold **, italics *, links, and code blocks) and HTML tags, extracting the raw textual character content into pure plain text.',
+    },
+    {
+      question: 'Is my data secure and private?',
+      answer:
+        'Yes. 100% of the Markdown parsing and text stripping occurs client-side in your web browser memory. No text is uploaded to any server.',
+    },
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Markdown to Plain Text', url: 'https://txtcraft.site/tools/markdown-to-txt' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Markdown to Plain Text</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 text-xs font-semibold">
           <FileCode className="w-3.5 h-3.5" />
@@ -95,6 +139,30 @@ console.log("Hello from code block!");
           />
         </div>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Related Text Utilities"
+        subtitle="Compare document differences, transform word casing, or format lines."
+        excludeHref="/tools/markdown-to-txt"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Ready Plain Text Documentation Templates"
+        subtitle="Download pre-structured markdown and text documentation templates."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Formatting Guides & Standards"
+        subtitle="Learn how to structure monospace files, markdown documents, and release notes."
+        articles={ARTICLES.slice(0, 3)}
+      />
+
+      <FaqSection faqs={faqs} />
     </div>
   );
 }

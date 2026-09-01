@@ -1,16 +1,39 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ARTICLES } from '@/lib/articles-data';
+import { TEMPLATES } from '@/lib/templates-data';
 import { BookOpen, Clock, ArrowRight, User } from 'lucide-react';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { RelatedToolsSection, RelatedTemplatesSection } from '@/components/seo/InternalLinks';
 
 export const metadata: Metadata = {
-  title: 'Plain Text Guides & Documentation Hub',
-  description: 'In-depth engineering guides on character encodings (UTF-8, UTF-16, ANSI), CRLF vs LF line endings, batch automation, and web standards.',
+  title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+  description:
+    'In-depth engineering guides on character encodings (UTF-8, UTF-16, ANSI), CRLF vs LF line endings, batch automation, and web standards.',
+  alternates: {
+    canonical: 'https://txtcraft.site/guides',
+  },
 };
 
 export default function GuidesPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Guides', url: 'https://txtcraft.site/guides' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Technical Guides</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
           <BookOpen className="w-3.5 h-3.5" />
@@ -66,6 +89,20 @@ export default function GuidesPage() {
           </Link>
         ))}
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Interactive Text Processing Tools"
+        subtitle="Put these concepts into practice using our specialized browser tools."
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Ready-to-Use Plain Text Templates"
+        subtitle="Standardized templates referenced in our architectural guides."
+        templates={TEMPLATES.slice(0, 3)}
+      />
     </div>
   );
 }

@@ -2,9 +2,15 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ARTICLES } from '@/lib/articles-data';
-import { Clock, Calendar, ArrowLeft, User } from 'lucide-react';
+import { TEMPLATES } from '@/lib/templates-data';
+import { Clock, Calendar, ArrowLeft, User, BookOpen } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
-import { ArticleJsonLd } from '@/components/seo/JsonLd';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 
 export async function generateStaticParams() {
   return ARTICLES.map((article) => ({
@@ -24,6 +30,9 @@ export async function generateMetadata({
     title: `${article.title} - TxtCraft Guides`,
     description: article.excerpt,
     keywords: article.tags,
+    alternates: {
+      canonical: `https://txtcraft.site/guides/${article.slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -43,6 +52,12 @@ export default function GuideArticlePage({
   const article = ARTICLES.find((a) => a.slug === params.slug);
   if (!article) notFound();
 
+  // Find other related articles
+  const otherArticles = ARTICLES.filter((a) => a.slug !== article.slug).slice(0, 3);
+
+  // Relevant templates
+  const featuredTemplates = TEMPLATES.slice(0, 3);
+
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
       <ArticleJsonLd
@@ -52,18 +67,31 @@ export default function GuideArticlePage({
         datePublished={article.publishDate}
         authorName={article.author.name}
       />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Guides', url: 'https://txtcraft.site/guides' },
+          { name: article.title, url: `https://txtcraft.site/guides/${article.slug}` },
+        ]}
+      />
 
-      {/* Breadcrumb */}
-      <Link
-        href="/guides"
-        className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-400 transition-colors"
-      >
-        <ArrowLeft className="w-3.5 h-3.5" /> Back to All Guides
-      </Link>
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/guides" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Guides
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium truncate max-w-xs">{article.title}</span>
+      </div>
 
       {/* Article Header */}
       <header className="space-y-4 border-b border-slate-200 dark:border-slate-800/80 pb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
+          <BookOpen className="w-3.5 h-3.5" />
           {article.category}
         </div>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight leading-tight">
@@ -117,16 +145,37 @@ export default function GuideArticlePage({
         <div className="space-y-1 text-center sm:text-left">
           <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Ready to Create Plain Text Files?</h3>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            Open the interactive TxtCraft studio to create, format, and export .txt documents.
+            Open our online notepad and TXT File Maker to write, format, and download .txt files.
           </p>
         </div>
         <Link
-          href="/"
+          href="/tools/txt-file-maker"
           className="px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 text-xs sm:text-sm font-bold shadow-lg shadow-teal-500/20 whitespace-nowrap transition-transform hover:scale-105"
         >
-          Open Text Studio &rarr;
+          Open TXT File Maker &rarr;
         </Link>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Recommended Tools for this Topic"
+        subtitle="Apply these best practices using our dedicated client-side utilities."
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Related Plain Text Templates"
+        subtitle="Download standardized templates implementing these guidelines."
+        templates={featuredTemplates}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="More Technical Guides & Tutorials"
+        subtitle="Deepen your understanding of file systems, data encoding, and DevOps automation."
+        articles={otherArticles}
+      />
 
       {/* Article Specific FAQ Section */}
       <FaqSection faqs={article.faqs} />

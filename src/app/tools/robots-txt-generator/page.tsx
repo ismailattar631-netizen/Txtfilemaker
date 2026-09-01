@@ -1,8 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Bot, Copy, Download, Check, Plus, Trash2 } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import { downloadTextFile } from '@/lib/encodings';
 
 interface BotRule {
@@ -103,6 +112,27 @@ export default function RobotsTxtGeneratorPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Robots.txt Builder', url: 'https://txtcraft.site/tools/robots-txt-generator' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Robots.txt Builder</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-xs font-semibold">
           <Bot className="w-3.5 h-3.5" />
@@ -259,6 +289,28 @@ export default function RobotsTxtGeneratorPage() {
           </div>
         </div>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="More Webmaster & Plain Text Tools"
+        subtitle="Compare file revisions, strip formatting, or create custom text documents."
+        excludeHref="/tools/robots-txt-generator"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Essential Webmaster Templates"
+        subtitle="Standardized templates for search engine crawlers, security contacts, and site credits."
+        templates={TEMPLATES.slice(1, 4)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="SEO & Crawler Configuration Guides"
+        subtitle="In-depth tutorials on search engine crawler syntax, security disclosures, and indexing rules."
+        articles={ARTICLES.slice(0, 3)}
+      />
 
       <FaqSection faqs={faqs} />
     </div>

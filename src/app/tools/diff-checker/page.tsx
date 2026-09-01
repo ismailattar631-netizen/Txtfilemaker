@@ -1,7 +1,17 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { GitCompare } from 'lucide-react';
+import FaqSection from '@/components/seo/FaqSection';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { TEMPLATES } from '@/lib/templates-data';
+import { ARTICLES } from '@/lib/articles-data';
+import {
+  RelatedToolsSection,
+  RelatedTemplatesSection,
+  RelatedGuidesSection,
+} from '@/components/seo/InternalLinks';
 import { computeLineDiff } from '@/lib/text-utils';
 
 export default function DiffCheckerPage() {
@@ -22,8 +32,42 @@ Region: us-east-1`);
 
   const diffLines = computeLineDiff(original, modified);
 
+  const faqs = [
+    {
+      question: 'How does the text diff algorithm work?',
+      answer:
+        'The diff tool analyzes both input documents line-by-line, computing differences using longest common subsequence (LCS) logic to highlight lines that have been added (+) in green or removed (-) in red.',
+    },
+    {
+      question: 'Is my data transmitted or stored during diffing?',
+      answer:
+        'No. 100% of the diff calculation happens locally inside your browser memory with complete privacy.',
+    },
+  ];
+
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: 'https://txtcraft.site' },
+          { name: 'Tools', url: 'https://txtcraft.site/tools/txt-file-maker' },
+          { name: 'Text Diff Checker', url: 'https://txtcraft.site/tools/diff-checker' },
+        ]}
+      />
+
+      {/* Breadcrumb Navigation */}
+      <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+        <Link href="/" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Home
+        </Link>
+        <span>/</span>
+        <Link href="/tools/txt-file-maker" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+          Tools
+        </Link>
+        <span>/</span>
+        <span className="text-slate-900 dark:text-slate-200 font-medium">Text Diff Checker</span>
+      </div>
+
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 text-xs font-semibold">
           <GitCompare className="w-3.5 h-3.5" />
@@ -95,6 +139,30 @@ Region: us-east-1`);
           })}
         </div>
       </div>
+
+      {/* Internal Linking: Related Tools */}
+      <RelatedToolsSection
+        title="Related Text Processing Tools"
+        subtitle="Sort lines, transform word casing, or strip Markdown formatting."
+        excludeHref="/tools/diff-checker"
+        maxItems={3}
+      />
+
+      {/* Internal Linking: Related Templates */}
+      <RelatedTemplatesSection
+        title="Popular Plain Text Templates"
+        subtitle="Compare revisions of your configuration and documentation templates."
+        templates={TEMPLATES.slice(0, 3)}
+      />
+
+      {/* Internal Linking: Related Guides */}
+      <RelatedGuidesSection
+        title="Technical Guides & Articles"
+        subtitle="Learn how to handle line endings, Unicode encodings, and shell script compatibility."
+        articles={ARTICLES.slice(0, 3)}
+      />
+
+      <FaqSection faqs={faqs} />
     </div>
   );
 }
