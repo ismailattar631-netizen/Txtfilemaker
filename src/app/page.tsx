@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
+import { FaqJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import { RelatedGuidesSection } from '@/components/seo/InternalLinks';
@@ -99,6 +100,8 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16 pb-16 transition-colors">
+      <FaqJsonLd faqs={homeFaqs} />
+
       {/* Hero Section */}
       <section className="relative pt-12 pb-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent pointer-events-none" />

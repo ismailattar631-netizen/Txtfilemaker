@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, HowToJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -57,11 +57,20 @@ export const metadata: Metadata = {
       'The modern online notepad and plain text creator. Write notes, code snippets, or configuration files and download them as .txt files with custom encodings.',
     url: 'https://txtcraft.site/tools/txt-file-maker',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TxtCraft - TXT File Maker & Online Notepad',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TXT File Maker - Create & Download Text Files Online',
     description: 'Fast, secure browser notepad and text to file creator with instant .txt download.',
+    images: ['/og-image.png'],
   },
 };
 
@@ -101,6 +110,7 @@ export default function TxtFileMakerPage() {
 
   return (
     <div className="space-y-16 pb-16 transition-colors">
+      <FaqJsonLd faqs={toolFaqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },

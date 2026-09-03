@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: '%s | TxtCraft',
   },
   description:
-    'Free online TXT file maker & notepad. Create, edit, format, and download plain text (.txt) files in your browser. Supports UTF-8, ANSI, and CRLF/LF line endings.',
+    'Free online TXT file maker & notepad. Create, edit, and download plain text (.txt) files in your browser with UTF-8, ANSI, and CRLF/LF support.',
   keywords: [
     'txt file maker',
     'create text file online',
@@ -49,11 +49,20 @@ export const metadata: Metadata = {
     siteName: 'TxtCraft',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TxtCraft - Free Online TXT File Maker & Notepad',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TXT File Maker - Create & Download Text Files Online',
     description: 'Fast, secure online notepad and text to file creator with instant .txt download.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,

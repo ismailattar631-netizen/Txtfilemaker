@@ -47,7 +47,40 @@ export const ARTICLES: Article[] = [
         answer: 'There is no theoretical limit to the size of a plain text file beyond the storage filesystem limits (e.g., Exabytes on NTFS/ext4). However, standard text editors like Notepad may struggle with files larger than a few gigabytes without streaming memory buffering.',
       },
     ],
-    content: "### Introduction: The Enduring Power of Plain Text\n\nIn an era dominated by complex binary formats, cloud documents, and rich graphical files, the humble plain text file (.txt) remains the most resilient, universal, and essential standard in computer engineering. From configuration files and source code to system logs and legal disclosures, plain text is the lingua franca of digital systems.\n\nThis guide delves into the structural architecture of .txt files, how byte representations map to human glyphs, and the core rules for constructing bulletproof text files.\n\n---\n\n### The Fundamental Anatomy of a Text File\n\nAt its most fundamental layer, a text file is simply a continuous sequence of 8-bit bytes stored on a non-volatile medium. Unlike rich document formats like Microsoft Word (.docx) or Adobe PDF, a plain text file contains:\n\n1. **No Binary Headers:** There are no proprietary file signatures (except optional Unicode Byte Order Marks).\n2. **No Font or Styling Metadata:** Color, font family, italics, and layout margins do not exist in the raw file; rendering is entirely delegated to the viewing application.\n3. **Control Characters:** Structural layout is achieved purely through standardized ASCII/Unicode control characters: Line Feed (0x0A), Carriage Return (0x0D), Tab (0x09).\n\n---\n\n### Character Encodings: From ASCII to UTF-8\n\nA character encoding defines the lookup dictionary between binary bytes and human characters.\n\n1. **ASCII (1963):** 7 bits per character, supporting 128 unique symbols (English letters, numbers, and basic punctuation).\n2. **Extended ANSI / Windows-1252:** Uses 8 bits (256 characters) to support Western European accents and currency symbols.\n3. **Unicode (UTF-8):** The undisputed global standard today. UTF-8 is a variable-width encoding (1 to 4 bytes per character) backward compatible with ASCII that can encode over 149,000 characters spanning all world languages, technical symbols, and emojis.\n\n---\n\n### Best Practices for Creating Professional .txt Files\n\n1. **Always Default to UTF-8:** Unless dealing with specialized legacy mainframes, encode all modern text files in UTF-8 without BOM.\n2. **Respect the Monospace Grid:** When formatting text tables or ASCII headers, assume the reader is using a monospace font with an 80-character column limit for terminal readability.\n3. **Include a Consistent Line Ending:** Maintain either CRLF or LF across the entire document; never mix line terminators within the same file.\n4. **End Files with a Final Newline:** Many POSIX utilities (such as cat, grep, and wc) expect the final line of a text file to terminate with a newline character.",
+    content: `### Introduction: The Enduring Power of Plain Text
+
+In an era dominated by complex binary formats, cloud documents, and rich graphical files, the humble plain text file (.txt) remains the most resilient, universal, and essential standard in computer engineering. From configuration files and source code to system logs and legal disclosures, plain text is the lingua franca of digital systems.
+
+You can easily draft and export plain text files with custom encodings directly in our browser-based [TXT File Maker](/tools/txt-file-maker). To compare different versions of your text documents line-by-line, you can also use our [Text Diff Checker](/tools/diff-checker).
+
+---
+
+### The Fundamental Anatomy of a Text File
+
+At its most fundamental layer, a text file is simply a continuous sequence of 8-bit bytes stored on a non-volatile medium. Unlike rich document formats like Microsoft Word (.docx) or Adobe PDF, a plain text file contains:
+
+1. **No Binary Headers:** There are no proprietary file signatures (except optional Unicode Byte Order Marks).
+2. **No Font or Styling Metadata:** Color, font family, italics, and layout margins do not exist in the raw file; rendering is entirely delegated to the viewing application.
+3. **Control Characters:** Structural layout is achieved purely through standardized ASCII/Unicode control characters: Line Feed (0x0A), Carriage Return (0x0D), Tab (0x09).
+
+---
+
+### Character Encodings: From ASCII to UTF-8
+
+A character encoding defines the lookup dictionary between binary bytes and human characters.
+
+1. **ASCII (1963):** 7 bits per character, supporting 128 unique symbols (English letters, numbers, and basic punctuation).
+2. **Extended ANSI / Windows-1252:** Uses 8 bits (256 characters) to support Western European accents and currency symbols.
+3. **Unicode (UTF-8):** The undisputed global standard today. UTF-8 is a variable-width encoding (1 to 4 bytes per character) backward compatible with ASCII that can encode over 149,000 characters spanning all world languages, technical symbols, and emojis. You can test and inspect various character sets using our [TXT File Maker](/tools/txt-file-maker).
+
+---
+
+### Best Practices for Creating Professional .txt Files
+
+1. **Always Default to UTF-8:** Unless dealing with specialized legacy mainframes, encode all modern text files in UTF-8 without BOM.
+2. **Respect the Monospace Grid:** When formatting text tables or ASCII headers, assume the reader is using a monospace font with an 80-character column limit for terminal readability.
+3. **Include a Consistent Line Ending:** Maintain either CRLF or LF across the entire document; never mix line terminators within the same file. Use our [Line Tools & Sorter](/tools/line-tools) to clean and standardize lines.
+4. **Use Pre-configured Templates:** Jumpstart your documentation by browsing our curated [Plain Text Templates Library](/templates), which includes standardized formats for README, CHANGELOG, and license files.`,
   },
   {
     slug: 'crlf-vs-lf-line-endings',
@@ -75,7 +108,32 @@ export const ARTICLES: Article[] = [
         answer: 'Linux treats the \\r character as part of the command or path name, leading to errors like "/bin/bash^M: bad interpreter: No such file or directory". Converting to LF fixes the problem immediately.',
       },
     ],
-    content: "### The Mechanical Origins of Line Endings\n\nThe discrepancy between operating system line endings dates back to electro-mechanical teleprinters and typewriters in the mid-20th century:\n\n- **Carriage Return (CR, 0x0D):** Mechanically rolled the typewriter carriage back to the extreme left margin without advancing the paper down.\n- **Line Feed (LF, 0x0A):** Rotated the typewriter platen roller to advance the paper one line downwards without moving the carriage.\n\nBecause physical typewriters required a brief millisecond delay to roll the heavy metal carriage back to the left, two separate signals were transmitted: CR followed by LF.\n\n---\n\n### Modern Operating System Standards\n\n1. **Windows OS (CRLF - \\r\\n):** Microsoft MS-DOS and Windows preserved the two-byte CRLF convention for compatibility with CP/M teleprinters.\n2. **Unix & Linux (LF - \\n):** Bell Labs engineers designed Unix to be lean and memory-efficient, standardizing on a single byte (LF) for end-of-line.\n3. **macOS (LF - \\n):** Apple Mac OS 9 and earlier used CR. When Apple transitioned to Darwin / BSD Unix in Mac OS X, macOS adopted standard LF.\n\n---\n\n### How to Convert Between CRLF and LF\n\nUsing **TxtCraft**:\n1. Open the TxtCraft Editor or Line Tools.\n2. Use the Line Endings selector in the bottom status bar to toggle between CRLF (Windows) and LF (Unix/macOS).\n3. Download your normalized file with a single click.",
+    content: `### The Mechanical Origins of Line Endings
+
+The discrepancy between operating system line endings dates back to electro-mechanical teleprinters and typewriters in the mid-20th century:
+
+- **Carriage Return (CR, 0x0D):** Mechanically rolled the typewriter carriage back to the extreme left margin without advancing the paper down.
+- **Line Feed (LF, 0x0A):** Rotated the typewriter platen roller to advance the paper one line downwards without moving the carriage.
+
+Because physical typewriters required a brief millisecond delay to roll the heavy metal carriage back to the left, two separate signals were transmitted: CR followed by LF.
+
+---
+
+### Modern Operating System Standards
+
+1. **Windows OS (CRLF - \\r\\n):** Microsoft MS-DOS and Windows preserved the two-byte CRLF convention for compatibility with CP/M teleprinters.
+2. **Unix & Linux (LF - \\n):** Bell Labs engineers designed Unix to be lean and memory-efficient, standardizing on a single byte (LF) for end-of-line.
+3. **macOS (LF - \\n):** Apple Mac OS 9 and earlier used CR. When Apple transitioned to Darwin / BSD Unix in Mac OS X, macOS adopted standard LF.
+
+---
+
+### How to Convert Between CRLF and LF
+
+Using **TxtCraft**:
+1. Open our online [Line Tools & Sorter](/tools/line-tools) to deduplicate, sort, and strip trailing whitespace.
+2. Open the [TXT File Maker](/tools/txt-file-maker) and use the Line Endings selector in the bottom status bar to toggle between CRLF (Windows) and LF (Unix/macOS).
+3. If you need to verify what changed between revisions, check the differences with the [Text Diff Checker](/tools/diff-checker).
+4. Download your normalized file with a single click.`,
   },
   {
     slug: 'character-encodings-utf8-utf16-ascii',
@@ -99,7 +157,40 @@ export const ARTICLES: Article[] = [
         answer: 'Mojibake refers to corrupted or scrambled text (like Ã© instead of é) caused when a text file written in one encoding is decoded using a different encoding. Converting the file back to UTF-8 resolves it.',
       },
     ],
-    content: "### What is Character Encoding?\n\nComputers do not store letters, emojis, or hieroglyphs; they only store binary zeros and ones (0 and 1). A character encoding is a standardized key table that translates integer numbers (known as Code Points) into sequences of bytes.\n\n---\n\n### The Evolution of Character Sets\n\n#### 1. ASCII (1963)\n- 7 bits per character (Range: 0x00 to 0x7F).\n- Total 128 characters.\n- Sufficient only for American English.\n\n#### 2. Windows-1252 / ANSI\n- 8 bits per character (Range: 0x00 to 0xFF).\n- Included accented vowels (é, à, ü) and typographical symbols (£, €, ©).\n- Flaw: Incompatible with Cyrillic, Greek, Arabic, and Asian scripts.\n\n#### 3. Unicode & UTF-8 (1993 - Present)\n- Universal character repertoire exceeding 1,114,112 code point slots.\n- **UTF-8:** Variable length from 1 to 4 bytes.\n  - ASCII characters (A-Z) = 1 byte.\n  - Greek, Arabic, Latin Extended = 2 bytes.\n  - CJK (Chinese, Japanese, Korean) = 3 bytes.\n  - Emojis and historical scripts = 4 bytes.\n- Over 98% of the modern internet is powered by UTF-8.",
+    content: `### What is Character Encoding?
+
+Computers do not store letters, emojis, or hieroglyphs; they only store binary zeros and ones (0 and 1). A character encoding is a standardized key table that translates integer numbers (known as Code Points) into sequences of bytes.
+
+You can create, test, and save files with custom character encodings using our [TXT File Maker](/tools/txt-file-maker), and format text strings with the [Text Case Converter](/tools/case-converter).
+
+---
+
+### The Evolution of Character Sets
+
+#### 1. ASCII (1963)
+- 7 bits per character (Range: 0x00 to 0x7F).
+- Total 128 characters.
+- Sufficient only for American English.
+
+#### 2. Windows-1252 / ANSI
+- 8 bits per character (Range: 0x00 to 0xFF).
+- Included accented vowels (é, à, ü) and typographical symbols (£, €, ©).
+- Flaw: Incompatible with Cyrillic, Greek, Arabic, and Asian scripts.
+
+#### 3. Unicode & UTF-8 (1993 - Present)
+- Universal character repertoire exceeding 1,114,112 code point slots.
+- **UTF-8:** Variable length from 1 to 4 bytes.
+  - ASCII characters (A-Z) = 1 byte.
+  - Greek, Arabic, Latin Extended = 2 bytes.
+  - CJK (Chinese, Japanese, Korean) = 3 bytes.
+  - Emojis and historical scripts = 4 bytes.
+- Over 98% of the modern internet is powered by UTF-8.
+
+---
+
+### Preventing Text Corruption (Mojibake)
+
+When sharing files across global environments or legacy spreadsheet software (like Microsoft Excel), always save with UTF-8 or UTF-8 with BOM using the [TXT File Maker](/tools/txt-file-maker). For batch file provisioning, verify our [Batch TXT Generator](/tools/batch-generator).`,
   },
   {
     slug: 'batch-txt-generation-workflows',
@@ -123,7 +214,29 @@ export const ARTICLES: Article[] = [
         answer: 'Common use cases include mock data generation for load testing, bulk invoice/receipt generation, machine learning training text preparation, and IoT device configuration provisioning.',
       },
     ],
-    content: "### Why Batch Plain Text Generation is Essential\n\nIn modern software development, QA testing, and systems administration, creating individual configuration files or synthetic test fixtures by hand is inefficient and error-prone.\n\nBatch text generation empowers engineers to:\n1. **Stress-test File Parsers:** Validate that your software can ingest 10,000 distinct log files without memory leaks.\n2. **Provision IoT and Microservices:** Generate unique credentials and configuration files per device node.\n3. **Prepare Synthetic NLP Datasets:** Produce randomized prompt datasets for language model training.\n\n---\n\n### Step-by-Step Guide: Using TxtCraft Batch Generator\n\n1. Navigate to the Batch TXT Generator tool.\n2. Set the Filename Pattern, e.g. client_record_{id}.txt.\n3. Write your dynamic template with {id}, {name}, and {timestamp}.\n4. Configure variable ranges (e.g., Sequence from 1 to 100) or paste a CSV table of data.\n5. Click Generate & Download ZIP Archive.",
+    content: `### Why Batch Plain Text Generation is Essential
+
+In modern software development, QA testing, and systems administration, creating individual configuration files or synthetic test fixtures by hand is inefficient and error-prone.
+
+Batch text generation empowers engineers to:
+1. **Stress-test File Parsers:** Validate that your software can ingest 10,000 distinct log files without memory leaks.
+2. **Provision IoT and Microservices:** Generate unique credentials and configuration files per device node.
+3. **Prepare Synthetic NLP Datasets:** Produce randomized prompt datasets for language model training.
+
+You can run automated batch generations directly in your browser with our [Batch TXT Generator](/tools/batch-generator).
+
+---
+
+### Step-by-Step Guide: Using TxtCraft Batch Generator
+
+1. Navigate to the [Batch TXT Generator](/tools/batch-generator) tool.
+2. Set the Filename Pattern, e.g. \`client_record_{id}.txt\`.
+3. Write your dynamic template with \`{id}\`, \`{name}\`, and \`{timestamp}\`.
+4. Configure variable ranges (e.g., Sequence from 1 to 100) or paste a CSV table of data.
+5. If your input lists contain duplicates or uneven formatting, clean them up first using [Line Tools & Sorter](/tools/line-tools).
+6. Click **Generate & Download ZIP Archive**.
+
+For single-document editing or tweaking individual files, you can always open them in the [TXT File Maker](/tools/txt-file-maker).`,
   },
   {
     slug: 'mastering-plain-text-formatting',
@@ -143,7 +256,29 @@ export const ARTICLES: Article[] = [
         answer: 'You can use the TxtCraft Line Tools page to instantly deduplicate lines with case-sensitive or case-insensitive matching in the browser with zero server latency.',
       },
     ],
-    content: "### The Challenge of Dirty Plain Text\n\nData pipelines ingest unstructured text from diverse sources: web scrapers, database exports, legacy terminals, and user submissions. Common anomalies include:\n- Mixed uppercase/lowercase inconsistencies\n- Stray HTML tags and Markdown glyphs\n- Duplicate records\n- Inconsistent spacing and trailing tabs\n\n---\n\n### Key Text Transformation Strategies\n\n#### 1. Case Normalization\nConverting identifier fields to snake_case or kebab-case ensures cross-database indexing consistency.\n\n#### 2. Regex Cleaning\nUsing regular expression replacements to strip HTML tags, remove empty blank lines, and normalize whitespace.\n\n#### 3. Line-by-Line Operations\nAlphabetical sorting (A-Z / Z-A) and line numbering formatted for legal citations and log references.",
+    content: `### The Challenge of Dirty Plain Text
+
+Data pipelines ingest unstructured text from diverse sources: web scrapers, database exports, legacy terminals, and user submissions. Common anomalies include:
+- Mixed uppercase/lowercase inconsistencies
+- Stray HTML tags and Markdown glyphs
+- Duplicate records
+- Inconsistent spacing and trailing tabs
+
+---
+
+### Key Text Transformation Strategies
+
+#### 1. Case Normalization
+Converting identifier fields to \`snake_case\` or \`kebab-case\` ensures cross-database indexing consistency. Use our online [Text Case Converter](/tools/case-converter) to transform strings into Title Case, UPPERCASE, camelCase, and kebab-case instantly.
+
+#### 2. Markdown & HTML Stripping
+When extracting raw copy from blog articles or rich web pages, you must remove formatting tags. Use the [Markdown to Plain Text Converter](/tools/markdown-to-txt) to strip bold marks, headings, links, and HTML into pure unformatted text.
+
+#### 3. Line-by-Line Operations
+Alphabetical sorting (A-Z / Z-A) and line numbering formatted for legal citations and log references can be performed instantly in the browser with our [Line Tools & Sorter](/tools/line-tools).
+
+#### 4. Final Review & Editing
+Before downloading or committing your cleaned text files, inspect them in the [TXT File Maker](/tools/txt-file-maker) editor or compare before-and-after results using the [Text Diff Checker](/tools/diff-checker).`,
   },
   {
     slug: 'anatomy-of-robots-and-security-txt',
@@ -167,7 +302,48 @@ export const ARTICLES: Article[] = [
         answer: 'No! robots.txt is a voluntary advisory protocol for polite search engine bots. It does not secure or restrict web browser access. Never list sensitive hidden URLs in robots.txt as malicious bots can inspect it.',
       },
     ],
-    content: "### The Critical Role of Root Protocol Files\n\nWeb servers rely on specialized plain text files placed in the root directory to communicate machine-readable policies with automated crawlers, search engines, and security researchers.\n\n---\n\n### Anatomy of robots.txt\n\nUser-agent: *\nDisallow: /private/\nDisallow: /admin/\nAllow: /public/\n\nUser-agent: Googlebot\nDisallow: /temp/\n\nSitemap: https://www.example.com/sitemap.xml\n\n#### Essential Directives:\n- **User-agent:** Specifies which bot the rule applies to (* = all bots).\n- **Disallow:** Paths search engines must not crawl.\n- **Allow:** Explicitly permits crawling of sub-directories within a disallowed parent.\n- **Sitemap:** Tells search engines where to find your XML sitemap.\n\n---\n\n### The RFC 9116 Standard: security.txt\n\nContact: mailto:security@example.com\nExpires: 2027-12-31T23:59:59.000Z\nCanonical: https://example.com/.well-known/security.txt\nPolicy: https://example.com/disclosure-policy.html\n\nThe security.txt file provides ethical security researchers an immediate, unambiguous channel to disclose potential security vulnerabilities before public exposure.",
+    content: `### The Critical Role of Root Protocol Files
+
+Web servers rely on specialized plain text files placed in the root directory to communicate machine-readable policies with automated crawlers, search engines, and security researchers.
+
+You can visually construct and validate crawler directives using our dedicated [Robots.txt Builder](/tools/robots-txt-generator).
+
+---
+
+### Anatomy of robots.txt
+
+\`\`\`text
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Allow: /public/
+
+User-agent: Googlebot
+Disallow: /temp/
+
+Sitemap: https://txtcraft.site/sitemap.xml
+\`\`\`
+
+#### Essential Directives:
+- **User-agent:** Specifies which bot the rule applies to (* = all bots).
+- **Disallow:** Paths search engines must not crawl.
+- **Allow:** Explicitly permits crawling of sub-directories within a disallowed parent.
+- **Sitemap:** Tells search engines where to find your XML sitemap.
+
+You can also download ready-to-use boilerplate templates directly from our [Robots.txt Standard Template](/templates/robots-txt-standard).
+
+---
+
+### The RFC 9116 Standard: security.txt
+
+\`\`\`text
+Contact: mailto:security@example.com
+Expires: 2027-12-31T23:59:59.000Z
+Canonical: https://txtcraft.site/.well-known/security.txt
+Policy: https://txtcraft.site/privacy
+\`\`\`
+
+The security.txt file provides ethical security researchers an immediate, unambiguous channel to disclose potential security vulnerabilities before public exposure. Inspect our pre-configured [Security.txt Template](/templates/security-txt) to deploy your own security disclosure file, or write and edit files in the [TXT File Maker](/tools/txt-file-maker).`,
   },
 ];
 

@@ -6,7 +6,7 @@ import { ARTICLES } from '@/lib/articles-data';
 import { FolderOpen, ArrowLeft, Tag } from 'lucide-react';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
 import {
   RelatedToolsSection,
   RelatedTemplatesSection,
@@ -76,6 +76,7 @@ export default function TemplateDetailPage({
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <FaqJsonLd faqs={faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },

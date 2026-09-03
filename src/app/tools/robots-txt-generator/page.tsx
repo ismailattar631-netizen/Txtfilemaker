@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Bot, Copy, Download, Check, Plus, Trash2 } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -112,6 +112,7 @@ export default function RobotsTxtGeneratorPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <FaqJsonLd faqs={faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },

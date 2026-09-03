@@ -13,6 +13,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://txtcraft.site/guides',
   },
+  openGraph: {
+    title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+    description:
+      'In-depth engineering guides on character encodings (UTF-8, UTF-16, ANSI), CRLF vs LF line endings, batch automation, and web standards.',
+    url: 'https://txtcraft.site/guides',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TxtCraft - Technical Plain Text Guides',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+    description:
+      'In-depth engineering guides on character encodings, line endings, and web standards.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function GuidesPage() {

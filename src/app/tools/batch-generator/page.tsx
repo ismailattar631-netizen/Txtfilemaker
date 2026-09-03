@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 import { Layers, Download, Sparkles, FileText, Check, FileArchive } from 'lucide-react';
 import Link from 'next/link';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -165,6 +165,7 @@ This is an automated batch-generated text document for testing and data pipeline
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+      <FaqJsonLd faqs={batchFaqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
