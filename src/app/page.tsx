@@ -108,17 +108,16 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            Free Online Notepad & Text to File Creator
+            Free Online Text Tools & Workspace
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
-            TXT File Maker –{' '}
+            Free Online Text Tools for{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
-              Create & Download Text Files
+              Every Plain Text Task
             </span>
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            The ultra-fast online notepad and text to file creator. Write plain text, choose custom encodings
-            (UTF-8, ANSI, UTF-16), switch CRLF/LF line endings, and download .txt files with 1 click.
+            Your all-in-one browser workspace for plain text. Create and download .txt files, convert text casing, clean and deduplicate lines, compare text diffs, and generate files in batch with 100% client-side privacy.
           </p>
         </div>
       </section>

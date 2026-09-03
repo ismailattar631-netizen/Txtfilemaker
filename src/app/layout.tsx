@@ -8,11 +8,11 @@ import { WebAppJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   metadataBase: new URL('https://txtcraft.site'),
   title: {
-    default: 'TXT File Maker - Create & Download Text Files Online | TxtCraft',
+    default: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
     template: '%s | TxtCraft',
   },
   description:
-    'Free online TXT file maker & notepad. Create, edit, and download plain text (.txt) files in your browser with UTF-8, ANSI, and CRLF/LF support.',
+    'Free online TXT file maker, notepad, and plain text tools suite. Create, format, convert, and download .txt files with UTF-8, ANSI, and CRLF/LF support.',
   keywords: [
     'txt file maker',
     'create text file online',
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     canonical: 'https://txtcraft.site',
   },
   openGraph: {
-    title: 'TXT File Maker - Create & Download Text Files Online',
+    title: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
     description:
-      'Write, edit, and download plain text (.txt) files instantly in your browser. 100% client-side privacy, multi-encoding support, and line-ending controls.',
+      'Free online TXT file maker, notepad, and plain text tools suite. Create, format, convert, and download .txt files with UTF-8, ANSI, and CRLF/LF support.',
     url: 'https://txtcraft.site',
     siteName: 'TxtCraft',
     locale: 'en_US',
@@ -60,8 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TXT File Maker - Create & Download Text Files Online',
-    description: 'Fast, secure online notepad and text to file creator with instant .txt download.',
+    title: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
+    description:
+      'Free online TXT file maker, notepad, and plain text tools suite. Create, format, convert, and download .txt files with instant browser downloads.',
     images: ['/og-image.png'],
   },
   robots: {
