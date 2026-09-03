@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  alternates: {
+    canonical: 'https://txtcraft.site',
+  },
   openGraph: {
     title: 'TXT File Maker - Create & Download Text Files Online',
     description:

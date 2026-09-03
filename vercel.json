@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.txtcraft.site"
+        }
+      ],
+      "destination": "https://txtcraft.site/:path*",
+      "permanent": true
+    }
+  ]
+}

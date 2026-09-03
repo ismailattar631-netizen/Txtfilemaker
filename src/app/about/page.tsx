@@ -4,6 +4,9 @@ import { FileText, Shield, Zap } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'About TxtCraft - High Performance Plain Text Studio',
   description: 'Learn about the mission, engineering philosophy, and privacy-first architecture of TxtCraft.',
+  alternates: {
+    canonical: 'https://txtcraft.site/about',
+  },
 };
 
 export default function AboutPage() {

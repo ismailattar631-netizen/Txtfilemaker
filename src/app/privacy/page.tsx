@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy - TxtCraft',
   description: 'Our privacy commitment: zero tracking, client-side data isolation, and full transparency.',
+  alternates: {
+    canonical: 'https://txtcraft.site/privacy',
+  },
 };
 
 export default function PrivacyPage() {
