@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/components/layout/Footer';
 import { WebAppJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 
@@ -102,6 +101,18 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-44KQ7ELTG7"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-44KQ7ELTG7');`,
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
               try {
@@ -124,7 +135,6 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
-        <GoogleAnalytics gaId="G-44KQ7ELTG7" />
       </body>
     </html>
   );
