@@ -1,4 +1,4 @@
-﻿import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -96,6 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
               try {
