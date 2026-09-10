@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
+import Script from 'next/script'
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Footer from '@/components/layout/Footer';
 import { WebAppJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
@@ -96,6 +97,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+<Script
+  async
+  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4832541917740546"
+  crossOrigin="anonymous"
+  strategy="afterInteractive"
+/>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
