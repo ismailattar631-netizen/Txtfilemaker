@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd, HowToJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd, SoftwareAppJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -12,42 +12,22 @@ import {
 } from '@/components/seo/InternalLinks';
 import {
   FileText,
-  Download,
   Shield,
   Zap,
   Globe,
   Sliders,
-  CheckCircle2,
   Lock,
   Smartphone,
   Laptop,
-  ArrowRight,
-  Sparkles,
-  Layers,
-  Terminal,
+  CheckCircle2,
   FileCheck2,
+  BookOpen,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'TXT File Maker - Create & Download Text Files Online',
   description:
     'Free online TXT file maker and browser notepad. Write, edit, convert text to file, and download plain text (.txt) files instantly. 100% private with UTF-8, ANSI & CRLF/LF support.',
-  keywords: [
-    'txt file maker',
-    'create text file online',
-    'online notepad',
-    'text to file',
-    'text to file maker',
-    'download txt file',
-    'plain text editor online',
-    'create txt file online',
-    'save text as txt',
-    'free online notepad',
-    'browser text editor',
-    'convert text to file',
-    'utf-8 text file maker',
-    'generate txt file',
-  ],
   alternates: {
     canonical: 'https://txtcraft.site/tools/txt-file-maker',
   },
@@ -87,6 +67,21 @@ export default function TxtFileMakerPage() {
         'Simply type or paste your content into the editor above, set your desired filename (e.g., notes.txt), choose your character encoding (UTF-8, ANSI, or UTF-16) and line endings (CRLF or LF), then click the "Download" button or press Ctrl+S. Your .txt file is created and downloaded immediately.',
     },
     {
+      question: 'How to create a TXT file online for free?',
+      answer:
+        'To create a TXT file online for free, open the TxtCraft editor, type or paste your notes, enter your preferred filename, and click Download. The entire file creation runs 100% in your browser with zero subscription fees, no user registration, and complete client-side privacy.',
+    },
+    {
+      question: 'Best free TXT file maker for Windows, Mac, Android and iPhone?',
+      answer:
+        'TxtCraft is the best free TXT file maker across Windows, Mac, Android, and iPhone because it is fully responsive, browser-native, and requires no app installation. It ensures consistent UTF-8 encoding and standardized CRLF or LF line endings across all mobile and desktop operating systems.',
+    },
+    {
+      question: 'Convert notes to a plain text file without installing software?',
+      answer:
+        'You can convert notes to a plain text file without installing software by pasting content from Word, Google Docs, Apple Notes, or sticky notes into the TxtCraft editor. TxtCraft automatically strips hidden rich-text formatting tags and exports a clean, pure .txt document.',
+    },
+    {
       question: 'Is my text safe and private when using this online notepad?',
       answer:
         'Yes, 100%. TxtCraft processes all text manipulation, encoding conversions, and file creation entirely in client-side JavaScript within your browser. No text is ever uploaded, transmitted to, or stored on remote servers.',
@@ -109,43 +104,46 @@ export default function TxtFileMakerPage() {
   ];
 
   return (
-    <div className="space-y-16 pb-16 transition-colors">
-      <FaqJsonLd faqs={toolFaqs} />
+    <div className="space-y-10 sm:space-y-14 pb-16 transition-colors">
+      <SoftwareAppJsonLd
+        name="TXT File Maker"
+        applicationCategory="Utility"
+        operatingSystem="Any"
+        price="0"
+        priceCurrency="USD"
+        description="Free online plain text editor and TXT file maker. Write, format, and download .txt files with UTF-8, ANSI, and CRLF/LF support."
+        url="https://txtcraft.site/tools/txt-file-maker"
+      />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
-          { name: 'Tools', url: 'https://txtcraft.site/tools/batch-generator' },
+          { name: 'Tools', url: 'https://txtcraft.site/#tools' },
           { name: 'TXT File Maker', url: 'https://txtcraft.site/tools/txt-file-maker' },
         ]}
       />
-      <HowToJsonLd
-        name="How to Create and Download a TXT File Online"
-        description="Step-by-step instructions to create, format, and save plain text as a .txt file online."
-      />
 
-      {/* Hero Header */}
-      <section className="relative pt-10 pb-4 overflow-hidden">
+      {/* Compact Hero Header - Lifts tool above the fold */}
+      <section className="relative pt-4 sm:pt-6 pb-2 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold">
-            <FileText className="w-3.5 h-3.5" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2.5">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-[11px] font-semibold">
+            <FileText className="w-3 h-3" />
             Free Online Notepad & Text to File Creator
           </div>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
             TXT File Maker –{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
               Create & Download Text Files
             </span>
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            Write notes, code snippets, lists, and configuration files in an ultra-clean online notepad.
-            Convert text to .txt files with UTF-8 encoding, custom line endings, and instant 1-click download.
+          <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+            Browser-based plain text editor. Write, format, and download clean .txt files with UTF-8, ANSI, and CRLF/LF support.
           </p>
         </div>
       </section>
 
-      {/* Editor Component */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+      {/* Editor Component - Positioned above the fold */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2">
         <TxtEditor
           initialFilename="notes.txt"
           initialText={`# My Plain Text Document
@@ -186,7 +184,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
 
       {/* Step-by-Step How-To Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
             How to Create & Download a TXT File Online
           </h2>
@@ -313,6 +311,67 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         </div>
       </section>
 
+      {/* Target Search Intent Guide Section (US/UK English) */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-slate-700 dark:text-slate-300">
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8 space-y-3">
+          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
+            <BookOpen className="w-4 h-4" />
+            Comprehensive Guide & User Workflows
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            Plain Text Creation Made Simple
+          </h2>
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+            Whether you need a quick online scratchpad, a script sanitizer, or a cross-device file creator, here is how TxtCraft handles your essential text workflows.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {/* Query 1: How to create a TXT file online for free */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+              <CheckCircle2 className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
+              How to create a TXT file online for free
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Creating a plain text file online requires no complex software, account signups, or subscription fees. With TxtCraft, simply open the browser notepad, type or paste your content, and rename the file in the dedicated filename box (e.g., <code className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">notes.txt</code>). You can specify your preferred character encoding (standard UTF-8, ANSI Windows-1252, or UTF-16) and line-ending standard (Windows CRLF or Unix LF). When you click <strong>Download</strong> (or press <kbd className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-300 dark:border-slate-700">Ctrl+S</kbd>), the browser immediately compiles and downloads the pure text document directly to your device storage.
+            </p>
+          </div>
+
+          {/* Query 2: Best free TXT file maker for Windows, Mac, Android and iPhone */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+              <Laptop className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
+              Best free TXT file maker for Windows, Mac, Android and iPhone
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Finding a text editor that behaves uniformly across mobile and desktop environments is often frustrating. Desktop utilities like Windows Notepad and macOS TextEdit have inconsistent default line terminators, while mobile devices frequently lack an integrated plain text editor. TxtCraft functions as a universal browser utility across Windows, macOS, Linux, ChromeOS, Android, and iOS (iPhone/iPad). Because the entire tool runs client-side in the web browser, your files remain completely private, and documents formatted on an iPhone or Android device open without formatting glitches or missing line breaks on Windows and Mac.
+            </p>
+          </div>
+
+          {/* Query 3: Convert notes to a plain text file without installing software */}
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+              <Zap className="w-5 h-5 text-sky-600 dark:text-sky-400 flex-shrink-0" />
+              Convert notes to a plain text file without installing software
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              When copying text from rich document editors such as Google Docs, Microsoft Word, email threads, or mobile notes apps, hidden metadata, proprietary XML tags, and non-standard quotation marks often corrupt developer pipelines and database ingest scripts. You can convert notes to a plain text file without installing software by pasting your copy into the TxtCraft editor canvas. The tool instantly purges all rich formatting, leaving only clean, genuine plain text.
+            </p>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              For an architectural deep-dive into plain text standards, UTF-8 encodings, and CRLF vs LF line terminators, explore our in-depth{' '}
+              <Link
+                href="/guides/complete-guide-to-txt-files"
+                className="text-teal-600 dark:text-teal-400 font-semibold underline underline-offset-2 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+              >
+                Complete Guide to Plain Text (.TXT) Files
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="Explore More Specialized Text Tools"
@@ -335,7 +394,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         articles={ARTICLES.slice(0, 3)}
       />
 
-      {/* FAQ Section */}
+      {/* FAQ Section with Crawlable DOM Answers */}
       <FaqSection
         title="TXT File Maker FAQs"
         subtitle="Common questions about creating, formatting, converting, and downloading .txt files online."

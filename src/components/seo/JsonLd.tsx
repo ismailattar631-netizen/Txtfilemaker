@@ -169,3 +169,43 @@ export function FaqJsonLd({ faqs }: { faqs: { question: string; answer: string }
     />
   );
 }
+
+export function SoftwareAppJsonLd({
+  name = 'TXT File Maker',
+  applicationCategory = 'Utility',
+  operatingSystem = 'Any',
+  price = '0',
+  priceCurrency = 'USD',
+  description = 'Free online plain text editor and TXT file maker. Write, format, and download plain text (.txt) files in your browser with UTF-8, ANSI, and CRLF/LF support.',
+  url = 'https://txtcraft.site/tools/txt-file-maker',
+}: {
+  name?: string;
+  applicationCategory?: string;
+  operatingSystem?: string;
+  price?: string;
+  priceCurrency?: string;
+  description?: string;
+  url?: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name,
+    applicationCategory,
+    operatingSystem,
+    offers: {
+      '@type': 'Offer',
+      price,
+      priceCurrency,
+    },
+    description,
+    url,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}

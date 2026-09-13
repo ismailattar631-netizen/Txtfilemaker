@@ -57,11 +57,20 @@ export default function FaqSection({
                     }`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="px-5 pb-5 text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed border-t border-slate-100 dark:border-slate-800/40 pt-3">
+                <div
+                  id={`faq-answer-${idx}`}
+                  role="region"
+                  aria-hidden={!isOpen}
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    isOpen
+                      ? 'max-h-[600px] opacity-100 px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800/40'
+                      : 'max-h-0 opacity-0 px-5 pb-0 pt-0 border-t-0'
+                  }`}
+                >
+                  <div className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                     {faq.answer}
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
