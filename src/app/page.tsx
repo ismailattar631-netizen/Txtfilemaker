@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
-import { FaqJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import { RelatedGuidesSection } from '@/components/seo/InternalLinks';
@@ -100,8 +99,6 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16 pb-16 transition-colors">
-      <FaqJsonLd faqs={homeFaqs} />
-
       {/* Hero Section */}
       <section className="relative pt-12 pb-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent pointer-events-none" />
@@ -149,7 +146,7 @@ export default function HomePage() {
             href="/templates"
             className="text-xs px-3 py-1.5 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 border border-teal-500/30 transition-colors font-medium"
           >
-            Explore All 25+ Templates &rarr;
+            Explore All 12 Templates &rarr;
           </Link>
         </div>
       </section>
@@ -348,7 +345,7 @@ export default function HomePage() {
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Line Ending Integrity</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Line Ending Control</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 Effortlessly resolve carriage return discrepancies between Windows (CRLF) and Linux/macOS (LF) line terminators.
               </p>
@@ -360,7 +357,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">100% Client-Side Privacy</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                Your data is processed locally inside your web browser. No text logs, no external telemetry, zero storage on remote servers.
+                Your data is processed locally inside your web browser. Nothing is tracked, nothing is uploaded, and nothing is stored on remote servers.
               </p>
             </div>
           </div>

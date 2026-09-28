@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Robots.txt File Generator | TxtCraft',
+  title: 'Robots.txt File Generator',
   description:
     'Construct an optimized, RFC-compliant robots.txt file to control search engine indexing, protect administrative directories, and declare XML sitemaps.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/robots-txt-generator',
   },
   openGraph: {
-    title: 'Robots.txt File Generator | TxtCraft',
+    title: 'Robots.txt File Generator',
     description:
       'Construct an optimized, RFC-compliant robots.txt file to control search engine indexing, protect administrative directories, and declare XML sitemaps.',
     url: 'https://txtcraft.site/tools/robots-txt-generator',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Robots.txt File Generator | TxtCraft',
+    title: 'Robots.txt File Generator',
     description:
       'Generate RFC-compliant robots.txt files with crawler directives and sitemap declarations.',
     images: ['/og-image.png'],

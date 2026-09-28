@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Batch Plain Text (.txt) File Generator | TxtCraft',
+  title: 'Batch Plain Text (.txt) File Generator',
   description:
     'Instantly generate hundreds of custom text files from templates with dynamic variable tokens and download as a ZIP archive.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/batch-generator',
   },
   openGraph: {
-    title: 'Batch Plain Text (.txt) File Generator | TxtCraft',
+    title: 'Batch Plain Text (.txt) File Generator',
     description:
       'Instantly generate hundreds of custom text files from templates with dynamic variable tokens and download as a ZIP archive.',
     url: 'https://txtcraft.site/tools/batch-generator',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Batch Plain Text (.txt) File Generator | TxtCraft',
+    title: 'Batch Plain Text (.txt) File Generator',
     description:
       'Generate hundreds of text files at once from templates and download as a ZIP.',
     images: ['/og-image.png'],

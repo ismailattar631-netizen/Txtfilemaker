@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - TxtCraft',
+  title: 'Terms of Service',
   description: 'Terms and conditions governing the use of TxtCraft web utilities.',
   alternates: {
     canonical: 'https://txtcraft.site/terms',

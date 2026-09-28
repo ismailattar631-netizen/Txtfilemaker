@@ -7,14 +7,14 @@ import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { RelatedToolsSection, RelatedTemplatesSection } from '@/components/seo/InternalLinks';
 
 export const metadata: Metadata = {
-  title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+  title: 'Plain Text Guides & Documentation Hub',
   description:
     'In-depth engineering guides on character encodings (UTF-8, UTF-16, ANSI), CRLF vs LF line endings, batch automation, and web standards.',
   alternates: {
     canonical: 'https://txtcraft.site/guides',
   },
   openGraph: {
-    title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+    title: 'Plain Text Guides & Documentation Hub',
     description:
       'In-depth engineering guides on character encodings (UTF-8, UTF-16, ANSI), CRLF vs LF line endings, batch automation, and web standards.',
     url: 'https://txtcraft.site/guides',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plain Text Guides & Documentation Hub | TxtCraft',
+    title: 'Plain Text Guides & Documentation Hub',
     description:
       'In-depth engineering guides on character encodings, line endings, and web standards.',
     images: ['/og-image.png'],

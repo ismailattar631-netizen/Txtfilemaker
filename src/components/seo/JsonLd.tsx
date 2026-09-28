@@ -13,14 +13,14 @@ export function WebAppJsonLd() {
       priceCurrency: 'USD',
     },
     featureList: [
-      'Interactive online plain text editor with live telemetry',
+      'Interactive online plain text editor with live word and line counts',
       'Instant .txt file creator and downloader',
       'Batch TXT file generator with custom variables and ZIP export',
       'Multi-encoding support (UTF-8, UTF-8 BOM, UTF-16LE, Windows-1252, ASCII)',
       'Line endings conversion (CRLF for Windows, LF for Unix/macOS)',
       'Case converter and string sanitizer',
       'Line manipulation and deduplication tools',
-      'Curated library of 25+ plain text templates',
+      'Curated library of 12 plain text templates',
     ],
   };
 

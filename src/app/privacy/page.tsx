@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - TxtCraft',
+  title: 'Privacy Policy',
   description: 'Our privacy commitment: zero tracking, client-side data isolation, and full transparency.',
   alternates: {
     canonical: 'https://txtcraft.site/privacy',
@@ -24,9 +24,10 @@ export default function PrivacyPage() {
 
         <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">1. Client-Side Data Processing</h2>
         <p>
-          When you use the TxtCraft editor, Case Converter, Line Sorter, or Batch Generator in standard mode,
-          all text manipulation and file creation occurs locally inside your web browser’s memory.
-          Your text is never sent to, stored on, or inspected by our servers.
+          When you use the TxtCraft editor, Case Converter, Line Sorter, or Batch Generator,
+          all text manipulation and file creation happens locally in your web browser.
+          Your text is processed entirely on your own device — it is never uploaded to
+          or stored on any server.
         </p>
 
         <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">2. Cookies and Analytics</h2>

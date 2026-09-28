@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Plain Text Diff & Comparison Tool | TxtCraft',
+  title: 'Plain Text Diff & Comparison Tool',
   description:
     'Compare two plain text documents line-by-line to detect changes, additions, and deletions.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/diff-checker',
   },
   openGraph: {
-    title: 'Plain Text Diff & Comparison Tool | TxtCraft',
+    title: 'Plain Text Diff & Comparison Tool',
     description:
       'Compare two plain text documents line-by-line to detect changes, additions, and deletions.',
     url: 'https://txtcraft.site/tools/diff-checker',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Plain Text Diff & Comparison Tool | TxtCraft',
+    title: 'Plain Text Diff & Comparison Tool',
     description:
       'Compare two text documents side-by-side to highlight additions and deletions.',
     images: ['/og-image.png'],

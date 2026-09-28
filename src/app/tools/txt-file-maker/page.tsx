@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://txtcraft.site/tools/txt-file-maker',
   },
   openGraph: {
-    title: 'TXT File Maker - Create & Download Text Files Online | TxtCraft',
+    title: 'TXT File Maker - Create & Download Text Files Online',
     description:
       'The modern online notepad and plain text creator. Write notes, code snippets, or configuration files and download them as .txt files with custom encodings.',
     url: 'https://txtcraft.site/tools/txt-file-maker',
@@ -150,7 +150,7 @@ export default function TxtFileMakerPage() {
 Created with TxtCraft TXT File Maker (https://txtcraft.site)
 
 Start typing your notes, task list, or code here...
-* Clean monospace editor with live character, word, and line telemetry
+* Clean monospace editor with live character, word, and line counts
 * Support for UTF-8, UTF-16, ANSI encodings and CRLF/LF line endings
 * 100% private: Processed directly in your browser with zero server uploads
 
@@ -177,7 +177,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
             href="/templates"
             className="text-xs px-3 py-1.5 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 text-teal-600 dark:text-teal-400 border border-teal-500/30 transition-colors font-medium"
           >
-            All 25+ Templates &rarr;
+            All 12 Templates &rarr;
           </Link>
         </div>
       </section>
@@ -270,7 +270,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center">
                 <Zap className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Live Text Telemetry</h4>
+              <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Live Character & Word Counts</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                 Real-time character tally, word count, line count, paragraph metrics, exact byte size calculation, and reading time estimates.
               </p>
@@ -302,7 +302,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
           <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-2">
             <h4 className="font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base flex items-center gap-2">
               <Lock className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              Guaranteed Plain Text Purity
+              Guaranteed Plain Text
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               Ensure your downloaded files contain zero hidden rich-text tags, binary artifacts, or formatting corruption that break developer pipelines.

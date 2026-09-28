@@ -288,7 +288,7 @@ Fixed:
 ------------------------------------------------------------------------
 Added:
 - Flesch-Kincaid readability scoring meter
-- Word, sentence, and paragraph telemetry
+- Word, sentence, and paragraph statistics
 
 [1.0.0] - 2026-06-01
 ------------------------------------------------------------------------

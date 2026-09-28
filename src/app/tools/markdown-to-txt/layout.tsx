@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Markdown & HTML to Plain Text (.txt) Converter | TxtCraft',
+  title: 'Markdown & HTML to Plain Text (.txt) Converter',
   description:
     'Instantly convert Markdown syntax, HTML tags, and formatted copy into crisp, clean plain text.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/markdown-to-txt',
   },
   openGraph: {
-    title: 'Markdown & HTML to Plain Text (.txt) Converter | TxtCraft',
+    title: 'Markdown & HTML to Plain Text (.txt) Converter',
     description:
       'Instantly convert Markdown syntax, HTML tags, and formatted copy into crisp, clean plain text.',
     url: 'https://txtcraft.site/tools/markdown-to-txt',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Markdown & HTML to Plain Text (.txt) Converter | TxtCraft',
+    title: 'Markdown & HTML to Plain Text (.txt) Converter',
     description:
       'Strip Markdown and HTML formatting down to pure, clean plain text instantly.',
     images: ['/og-image.png'],

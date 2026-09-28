@@ -24,13 +24,13 @@ export const ARTICLES: Article[] = [
   {
     slug: 'complete-guide-to-txt-files',
     title: 'The Complete Guide to Plain Text (.txt) Files: Architecture, Encodings, and Best Practices',
-    excerpt: 'Explore why plain text remains the bedrock of computing, how text files work under the hood, and how to optimize them for data pipelines, scripts, and software documentation.',
+    excerpt: 'Why plain text remains one of the most dependable formats in computing, how text files work under the hood, and how to get the most out of them for data pipelines, scripts, and software documentation.',
     category: 'Fundamentals',
     readTime: '8 min read',
     publishDate: '2026-08-20',
     author: {
-      name: 'Dr. Evelyn Reed',
-      role: 'Principal Systems Architect',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['text-files', 'encodings', 'unicode', 'data-formats', 'standards'],
     faqs: [
@@ -85,13 +85,13 @@ A character encoding defines the lookup dictionary between binary bytes and huma
   {
     slug: 'crlf-vs-lf-line-endings',
     title: 'CRLF vs LF: Understanding Line Endings Across Windows, macOS, and Linux',
-    excerpt: 'Demystifying the Carriage Return and Line Feed controversy. Learn how line terminators work, why git issues occur, and how to normalize text files across cross-platform environments.',
+    excerpt: 'Carriage Return vs Line Feed explained: how line terminators work, why Git line-ending warnings occur, and how to normalize text files across Windows, macOS, and Linux.',
     category: 'DevOps & Systems',
     readTime: '6 min read',
     publishDate: '2026-08-21',
     author: {
-      name: 'Marcus Brody',
-      role: 'Lead Infrastructure Engineer',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['crlf', 'lf', 'line-endings', 'git', 'windows', 'linux'],
     faqs: [
@@ -138,13 +138,13 @@ Using **TxtCraft**:
   {
     slug: 'character-encodings-utf8-utf16-ascii',
     title: 'Character Encodings Explained: UTF-8, UTF-16, ASCII, and Windows-1252',
-    excerpt: 'A comprehensive technical breakdown of character sets, Byte Order Marks (BOM), Unicode code points, and how to avoid mojibake text corruption.',
+    excerpt: 'How character sets, Byte Order Marks (BOM), and Unicode code points work, and how to avoid mojibake text corruption.',
     category: 'Architecture',
     readTime: '10 min read',
     publishDate: '2026-08-22',
     author: {
-      name: 'Dr. Evelyn Reed',
-      role: 'Principal Systems Architect',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['encoding', 'utf-8', 'utf-16', 'ascii', 'mojibake', 'bom'],
     faqs: [
@@ -195,13 +195,13 @@ When sharing files across global environments or legacy spreadsheet software (li
   {
     slug: 'batch-txt-generation-workflows',
     title: 'How to Generate TXT Files in Batch for Testing, Automation, and Data Workflows',
-    excerpt: 'Master automated plain-text file creation. Discover how to generate hundreds of templated text files with dynamic variables, sequence numbers, and zip packaging.',
+    excerpt: 'How to generate hundreds of templated text files with dynamic variables, sequence numbers, and zip packaging — no scripting required.',
     category: 'Automation',
     readTime: '7 min read',
     publishDate: '2026-08-23',
     author: {
-      name: 'Sam Patel',
-      role: 'Automation & QA Engineer',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['batch-generator', 'automation', 'testing', 'devops', 'zip'],
     faqs: [
@@ -218,8 +218,8 @@ When sharing files across global environments or legacy spreadsheet software (li
 
 In modern software development, QA testing, and systems administration, creating individual configuration files or synthetic test fixtures by hand is inefficient and error-prone.
 
-Batch text generation empowers engineers to:
-1. **Stress-test File Parsers:** Validate that your software can ingest 10,000 distinct log files without memory leaks.
+Batch text generation makes this much easier by:
+1. **Stress-testing File Parsers:** Validate that your software can ingest 10,000 distinct log files without memory leaks.
 2. **Provision IoT and Microservices:** Generate unique credentials and configuration files per device node.
 3. **Prepare Synthetic NLP Datasets:** Produce randomized prompt datasets for language model training.
 
@@ -241,19 +241,19 @@ For single-document editing or tweaking individual files, you can always open th
   {
     slug: 'mastering-plain-text-formatting',
     title: 'Mastering Plain Text Formatting: Clean Data Pipelines, Regular Expressions, and Parsing',
-    excerpt: 'Advanced techniques for sorting, deduplicating, transforming cases, and sanitizing text data without needing heavy desktop software.',
+    excerpt: 'Practical techniques for sorting, deduplicating, changing letter case, and cleaning up text data — no heavy desktop software needed.',
     category: 'Data Science',
     readTime: '9 min read',
     publishDate: '2026-08-24',
     author: {
-      name: 'Lisa Vance',
-      role: 'Data Pipeline Specialist',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['regex', 'text-processing', 'data-cleaning', 'sanitization'],
     faqs: [
       {
         question: 'What is the fastest way to remove duplicate lines from a text file?',
-        answer: 'You can use the TxtCraft Line Tools page to instantly deduplicate lines with case-sensitive or case-insensitive matching in the browser with zero server latency.',
+        answer: 'You can use the TxtCraft Line Tools page to deduplicate lines with case-sensitive or case-insensitive matching right in your browser — nothing is uploaded to a server.',
       },
     ],
     content: `### The Challenge of Dirty Plain Text
@@ -283,13 +283,13 @@ Before downloading or committing your cleaned text files, inspect them in the [T
   {
     slug: 'anatomy-of-robots-and-security-txt',
     title: 'The Anatomy of a Perfect robots.txt and security.txt File for Modern Webmasters',
-    excerpt: 'Everything you need to know about search engine crawler governance and RFC 9116 security vulnerability reporting.',
+    excerpt: 'How robots.txt controls search engine crawlers, and how security.txt (RFC 9116) handles vulnerability reporting.',
     category: 'SEO & Security',
     readTime: '8 min read',
     publishDate: '2026-08-25',
     author: {
-      name: 'Marcus Brody',
-      role: 'Lead Infrastructure Engineer',
+      name: 'TxtCraft Team',
+      role: 'Editorial Team',
     },
     tags: ['seo', 'robots-txt', 'security-txt', 'rfc9116', 'googlebot'],
     faqs: [

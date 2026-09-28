@@ -5,7 +5,7 @@ import { ARTICLES } from '@/lib/articles-data';
 import { TEMPLATES } from '@/lib/templates-data';
 import { Clock, Calendar, ArrowLeft, User, BookOpen, Wrench, ArrowRight } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
-import { ArticleJsonLd, BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import {
   RelatedToolsSection,
   RelatedTemplatesSection,
@@ -181,7 +181,6 @@ export default function GuideArticlePage({
         datePublished={article.publishDate}
         authorName={article.author.name}
       />
-      <FaqJsonLd faqs={article.faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },

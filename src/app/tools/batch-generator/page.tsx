@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 import { Layers, Download, Sparkles, FileText, Check, FileArchive } from 'lucide-react';
 import Link from 'next/link';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -155,7 +155,7 @@ This is an automated batch-generated text document for testing and data pipeline
     },
     {
       question: 'How many text files can I generate at once?',
-      answer: 'You can generate up to 500 files directly in your web browser instantly. For larger server-scale pipelines, you can also connect directly to our /api/generate-batch endpoint.',
+      answer: 'You can generate up to 500 files directly in your web browser — everything runs locally on your device and nothing is uploaded to any server.',
     },
     {
       question: 'Can I provide my own CSV data for variables?',
@@ -165,7 +165,6 @@ This is an automated batch-generated text document for testing and data pipeline
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
-      <FaqJsonLd faqs={batchFaqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
@@ -191,7 +190,7 @@ This is an automated batch-generated text document for testing and data pipeline
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
           <Layers className="w-3.5 h-3.5" />
-          Bulk Text Production Engine
+          Batch Generator
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
           Batch Plain Text (.txt) File Generator

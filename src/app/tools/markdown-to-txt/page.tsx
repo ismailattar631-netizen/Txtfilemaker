@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FileCode, Copy, Download, Check } from 'lucide-react';
 import FaqSection from '@/components/seo/FaqSection';
-import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/seo/JsonLd';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import {
@@ -47,9 +47,29 @@ console.log("Hello from code block!");
 
   const faqs = [
     {
-      question: 'How does Markdown to Plain Text conversion work?',
+      question: 'What happens to Markdown headings, bold, and italics?',
       answer:
-        'The tool parses Markdown syntax tokens (such as headers #, bold **, italics *, links, and code blocks) and HTML tags, extracting the raw textual character content into pure plain text.',
+        'The formatting symbols are removed, but the words stay. A heading like "# Project Notes" becomes "Project Notes" on its own line, and **bold** or *italic* markers disappear, leaving the text behind.',
+    },
+    {
+      question: 'What happens to links and images?',
+      answer:
+        'The readable text is kept and the URL is dropped. A link like [our site](https://example.com) becomes just "our site", and an image like ![cat](cat.jpg) becomes just the alt text "cat".',
+    },
+    {
+      question: 'What happens to code blocks and inline code?',
+      answer:
+        'Fenced code blocks (the sections wrapped in triple backticks) are removed completely, since they usually contain source code you do not want in a clean text export. Inline code keeps its text — only the backticks are removed.',
+    },
+    {
+      question: 'How are HTML tags handled?',
+      answer:
+        'HTML tags are stripped and the text inside them is kept, so <p>Free shipping <strong>this week</strong>!</p> becomes "Free shipping this week!". Content inside <script> and <style> tags is removed entirely, and common HTML entities like &amp; are decoded back to their characters.',
+    },
+    {
+      question: 'Is any formatting preserved in the plain text output?',
+      answer:
+        'No fonts, colors, sizes, or styling — plain text cannot hold those. What is preserved is the structure of your text: paragraphs stay as paragraphs, and list items and headings each keep their own lines, so the result is easy to read and paste anywhere.',
     },
     {
       question: 'Is my data secure and private?',
@@ -60,7 +80,6 @@ console.log("Hello from code block!");
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
-      <FaqJsonLd faqs={faqs} />
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
@@ -140,6 +159,135 @@ console.log("Hello from code block!");
           />
         </div>
       </div>
+
+      {/* How to use - 3 steps */}
+      <section>
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            How to Convert Markdown to Plain Text
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
+            Strip Markdown and HTML formatting in three quick steps.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-black text-lg">
+              1
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Paste Your Markdown or HTML
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Drop your Markdown notes, README file, or copied web page HTML into the input box on the left. Everything stays in your browser.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black text-lg">
+              2
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              See the Clean Text Instantly
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              The tool removes headers, bold and italic markers, links, images, blockquotes, list bullets, and HTML tags as you type — no button needed.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg">
+              3
+            </div>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+              Copy or Download the .txt
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Hit Copy to paste the clean text into email, documents, or code — or click Download .txt to save it as a plain text file.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Practical examples */}
+      <section className="space-y-6">
+        <div className="text-center mb-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            Conversion Examples
+          </h2>
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
+            What your Markdown or HTML looks like after the formatting is stripped.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
+              Example 1: Markdown newsletter
+            </h3>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Input
+              </p>
+              <pre className="font-mono text-xs bg-slate-100 dark:bg-slate-800 p-4 rounded-xl overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
+{`# Weekly Newsletter
+
+Here is **bold** news and *italics* — read [our site](https://example.com).
+
+- Apples
+- Oranges
+
+<p>Free shipping <strong>this week</strong>!</p>`}
+              </pre>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Output
+              </p>
+              <pre className="font-mono text-xs bg-teal-500/5 dark:bg-teal-500/10 border border-teal-500/20 p-4 rounded-xl overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
+{`Weekly Newsletter
+
+Here is bold news and italics — read our site.
+Apples
+Oranges
+
+Free shipping this week!`}
+              </pre>
+            </div>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
+              Example 2: HTML snippet
+            </h3>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Input
+              </p>
+              <pre className="font-mono text-xs bg-slate-100 dark:bg-slate-800 p-4 rounded-xl overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
+{`<h2>Sale Announcement</h2>
+
+<p>Everything is <strong>50% off</strong> — shop <a href="https://shop.example.com">our store</a> now.</p>
+
+<p>Coffee &amp; tea included.</p>`}
+              </pre>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                Output
+              </p>
+              <pre className="font-mono text-xs bg-teal-500/5 dark:bg-teal-500/10 border border-teal-500/20 p-4 rounded-xl overflow-x-auto text-slate-800 dark:text-slate-200 leading-relaxed">
+{`Sale Announcement
+
+Everything is 50% off — shop our store now.
+
+Coffee & tea included.`}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection

@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Online Text Case Converter | TxtCraft',
+  title: 'Online Text Case Converter',
   description:
     'Instantly convert any text between Title Case, UPPERCASE, lowercase, camelCase, snake_case, kebab-case, and Sentence case.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/case-converter',
   },
   openGraph: {
-    title: 'Online Text Case Converter | TxtCraft',
+    title: 'Online Text Case Converter',
     description:
       'Instantly convert any text between Title Case, UPPERCASE, lowercase, camelCase, snake_case, kebab-case, and Sentence case.',
     url: 'https://txtcraft.site/tools/case-converter',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Online Text Case Converter | TxtCraft',
+    title: 'Online Text Case Converter',
     description:
       'Instantly convert text between UPPERCASE, lowercase, camelCase, snake_case, and Title Case.',
     images: ['/og-image.png'],
