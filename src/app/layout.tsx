@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import { WebAppJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
+import { WebAppJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://txtcraft.site'),
@@ -115,7 +115,6 @@ gtag('config', 'G-44KQ7ELTG7');`,
       </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased selection:bg-teal-500/30 selection:text-teal-900 dark:selection:text-teal-200 transition-colors duration-200">
         <WebAppJsonLd />
-        <HowToJsonLd />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

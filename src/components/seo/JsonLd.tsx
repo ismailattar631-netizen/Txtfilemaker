@@ -123,7 +123,7 @@ export function ArticleJsonLd({
     datePublished: datePublished,
     dateModified: datePublished,
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: authorName,
     },
     publisher: {

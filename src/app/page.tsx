@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import TxtEditor from '@/components/editor/TxtEditor';
 import FaqSection from '@/components/seo/FaqSection';
+import { HowToJsonLd } from '@/components/seo/JsonLd';
 import { TEMPLATES } from '@/lib/templates-data';
 import { ARTICLES } from '@/lib/articles-data';
 import { RelatedGuidesSection } from '@/components/seo/InternalLinks';
@@ -152,6 +153,24 @@ export default function HomePage() {
       </section>
 
       {/* 3-Step How-To Section */}
+      <HowToJsonLd
+        name="How to Make a Text File Online in 3 Steps"
+        description="Create, format, and save your plain text (.txt) document without installing desktop apps."
+        steps={[
+          {
+            name: 'Write or Paste in Notepad',
+            text: 'Enter your plain text, code, notes, or configuration into the editor with real-time character and word count tracking.',
+          },
+          {
+            name: 'Select Encoding & Format',
+            text: 'Choose your filename, character encoding (UTF-8, UTF-16, ANSI), and switch line breaks between Windows CRLF and Unix LF.',
+          },
+          {
+            name: 'Download .TXT File',
+            text: 'Click the Download button (or press Ctrl+S) to instantly save your clean, ready-to-use .txt file to your device.',
+          },
+        ]}
+      />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
