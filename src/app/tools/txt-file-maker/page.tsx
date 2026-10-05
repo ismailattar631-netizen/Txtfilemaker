@@ -59,7 +59,7 @@ export default function TxtFileMakerPage() {
     {
       question: 'What is an online TXT file maker?',
       answer:
-        'An online TXT file maker (also known as a browser notepad or text-to-file creator) is a web utility that allows you to write, edit, and format plain text directly in your web browser and save or download it as a standardized .txt document to your device without installing software.',
+        'An online TXT file maker is a web page where you can write, edit, and format plain text, then save it as a .txt file on your device — no software installation needed.',
     },
     {
       question: 'How do I convert text to a .txt file and download it?',
@@ -69,12 +69,12 @@ export default function TxtFileMakerPage() {
     {
       question: 'How to create a TXT file online for free?',
       answer:
-        'To create a TXT file online for free, open the TxtCraft editor, type or paste your notes, enter your preferred filename, and click Download. The entire file creation runs 100% in your browser with zero subscription fees, no user registration, and complete client-side privacy.',
+        'To create a TXT file online for free, open the TxtCraft editor, type or paste your notes, enter your preferred filename, and click Download. The entire file creation runs in your browser — no subscriptions, no sign-ups, and nothing is uploaded.',
     },
     {
       question: 'Best free TXT file maker for Windows, Mac, Android and iPhone?',
       answer:
-        'TxtCraft is the best free TXT file maker across Windows, Mac, Android, and iPhone because it is fully responsive, browser-native, and requires no app installation. It ensures consistent UTF-8 encoding and standardized CRLF or LF line endings across all mobile and desktop operating systems.',
+        'TxtCraft works the same on Windows, Mac, Android, and iPhone — it is fully responsive, runs entirely in the browser, and needs no app installation. Encoding and line endings stay consistent (UTF-8, CRLF or LF) on every device.',
     },
     {
       question: 'Convert notes to a plain text file without installing software?',
@@ -84,7 +84,7 @@ export default function TxtFileMakerPage() {
     {
       question: 'Is my text safe and private when using this online notepad?',
       answer:
-        'Yes, 100%. TxtCraft processes all text manipulation, encoding conversions, and file creation entirely in client-side JavaScript within your browser. No text is ever uploaded, transmitted to, or stored on remote servers.',
+        'Yes. All text editing, encoding conversions, and file creation happen entirely in JavaScript inside your browser. No text is ever uploaded to or stored on any server.',
     },
     {
       question: 'Can I use this TXT file maker on mobile devices (Android & iOS)?',
@@ -99,7 +99,7 @@ export default function TxtFileMakerPage() {
     {
       question: 'How does this tool differ from default desktop Notepad or TextEdit?',
       answer:
-        'Unlike basic desktop apps, TxtCraft provides live metric analytics (character, word, line, and byte size counts), instant line-ending conversions, regex find & replace, casing transformations, duplicate line removers, and ready-to-use structured templates like README, robots.txt, and licenses.',
+        'Unlike basic desktop apps, TxtCraft gives you live counters (characters, words, lines, and byte size), instant line-ending conversion, regex find & replace, case conversion, a duplicate-line remover, and ready-to-use templates like README, robots.txt, and licenses.',
     },
   ];
 
@@ -189,7 +189,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
             How to Create & Download a TXT File Online
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            Generate clean, machine-readable plain text files in three effortless steps.
+            Generate clean, machine-readable plain text files in three easy steps.
           </p>
         </div>
 
@@ -202,7 +202,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               Type or Paste Text in Notepad
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Write notes, checklists, code, or documentation directly into the distraction-free monospace canvas, or drop an existing file to edit.
+              Write notes, checklists, code, or documentation directly into the distraction-free monospace editor, or drop an existing file to edit.
             </p>
           </div>
 
@@ -214,7 +214,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               Customize Encoding & Line Breaks
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Set your target filename, select your character encoding (UTF-8, UTF-16, ANSI), and choose between Windows CRLF or Unix LF line terminators.
+              Set your target filename, select your character encoding (UTF-8, UTF-16, ANSI), and choose between Windows CRLF or Unix LF line endings.
             </p>
           </div>
 
@@ -252,7 +252,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               </div>
               <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Universal Encodings</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Seamlessly export text in standard UTF-8, UTF-8 with BOM, UTF-16, ANSI Windows-1252, or pure 7-bit ASCII without corruption.
+                Export text in standard UTF-8, UTF-8 with BOM, UTF-16, ANSI Windows-1252, or pure 7-bit ASCII.
               </p>
             </div>
 
@@ -272,7 +272,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               </div>
               <h4 className="font-bold text-slate-900 dark:text-slate-100 text-base">Live Character & Word Counts</h4>
               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Real-time character tally, word count, line count, paragraph metrics, exact byte size calculation, and reading time estimates.
+                Live character and word counts, line and paragraph counts, byte size for your chosen encoding, and reading time estimates.
               </p>
             </div>
           </div>
@@ -285,7 +285,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
           Why Use an Online TXT File Maker?
         </h2>
         <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-400">
-          Traditional desktop text editors like Windows Notepad or macOS TextEdit often convert plain text to rich formatted text (.rtf), corrupt character encodings upon saving, or lack cross-platform accessibility on mobile phones and Chromebooks.
+          Traditional desktop text editors can surprise you: macOS TextEdit saves as rich text (.rtf) by default, and neither it nor Windows Notepad is there for you on a phone or Chromebook when you need a quick plain-text file.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -316,7 +316,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         <div className="border-t border-slate-200 dark:border-slate-800 pt-8 space-y-3">
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
             <BookOpen className="w-4 h-4" />
-            Comprehensive Guide & User Workflows
+            Comprehensive Guide & Workflows
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
             Plain Text Creation Made Simple
@@ -334,7 +334,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               How to create a TXT file online for free
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Creating a plain text file online requires no complex software, account signups, or subscription fees. With TxtCraft, simply open the browser notepad, type or paste your content, and rename the file in the dedicated filename box (e.g., <code className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">notes.txt</code>). You can specify your preferred character encoding (standard UTF-8, ANSI Windows-1252, or UTF-16) and line-ending standard (Windows CRLF or Unix LF). When you click <strong>Download</strong> (or press <kbd className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-300 dark:border-slate-700">Ctrl+S</kbd>), the browser immediately compiles and downloads the pure text document directly to your device storage.
+              You don't need any software, accounts, or subscriptions. Just open the TxtCraft editor, type or paste your content, and rename the file in the filename box (e.g., <code className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">notes.txt</code>). Pick your character encoding (standard UTF-8, ANSI Windows-1252, or UTF-16) and line endings (Windows CRLF or Unix LF). When you click <strong>Download</strong> (or press <kbd className="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-300 dark:border-slate-700">Ctrl+S</kbd>), the browser saves the pure text document straight to your device.
             </p>
           </div>
 
@@ -345,7 +345,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               Best free TXT file maker for Windows, Mac, Android and iPhone
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              Finding a text editor that behaves uniformly across mobile and desktop environments is often frustrating. Desktop utilities like Windows Notepad and macOS TextEdit have inconsistent default line terminators, while mobile devices frequently lack an integrated plain text editor. TxtCraft functions as a universal browser utility across Windows, macOS, Linux, ChromeOS, Android, and iOS (iPhone/iPad). Because the entire tool runs client-side in the web browser, your files remain completely private, and documents formatted on an iPhone or Android device open without formatting glitches or missing line breaks on Windows and Mac.
+              Finding a text editor that behaves the same on every device is often frustrating. Desktop utilities like Windows Notepad and macOS TextEdit use different default line endings, and most phones have no plain-text editor built in at all. TxtCraft runs entirely in the web browser across Windows, macOS, Linux, ChromeOS, Android, and iOS (iPhone/iPad), so your files stay private, and a file made on a phone still opens correctly on Windows and Mac.
             </p>
           </div>
 
@@ -356,10 +356,10 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
               Convert notes to a plain text file without installing software
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              When copying text from rich document editors such as Google Docs, Microsoft Word, email threads, or mobile notes apps, hidden metadata, proprietary XML tags, and non-standard quotation marks often corrupt developer pipelines and database ingest scripts. You can convert notes to a plain text file without installing software by pasting your copy into the TxtCraft editor canvas. The tool instantly purges all rich formatting, leaving only clean, genuine plain text.
+              When copying text from Google Docs, Microsoft Word, email threads, or mobile notes apps, hidden metadata, XML tags, and non-standard quote marks can break scripts and database imports. To convert notes to a plain text file without installing software, just paste your copy into the TxtCraft editor. All rich formatting is stripped away, leaving clean plain text.
             </p>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed pt-2 border-t border-slate-100 dark:border-slate-800/60">
-              For an architectural deep-dive into plain text standards, UTF-8 encodings, and CRLF vs LF line terminators, explore our in-depth{' '}
+              For a deeper look at plain text standards, UTF-8 encodings, and CRLF vs LF line endings, read our in-depth{' '}
               <Link
                 href="/guides/complete-guide-to-txt-files"
                 className="text-teal-600 dark:text-teal-400 font-semibold underline underline-offset-2 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
@@ -374,7 +374,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
 
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
-        title="Explore More Specialized Text Tools"
+        title="Explore More Text Tools"
         subtitle="Process strings, sort lines, build robots.txt files, or batch-produce documents."
         excludeHref="/tools/txt-file-maker"
         maxItems={3}

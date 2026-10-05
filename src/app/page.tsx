@@ -44,7 +44,7 @@ for developers, webmasters, writers, students, and data specialists.
 * Line Endings     : Seamless toggle between Windows CRLF (\\r\\n) & Unix LF (\\n)
 * Line Manipulation: Sort alphabetically, remove duplicates, trim whitespace
 * Find & Replace   : Regex support with live match counter and case toggle
-* Batch Creator    : Generate up to 500+ text files with custom variables & zip
+* Batch Creator    : Generate up to 500 text files with custom variables & zip
 
 [GET STARTED]
 1. Edit or replace this text directly in the monospace editor above.
@@ -79,12 +79,12 @@ export default function HomePage() {
     {
       question: 'Are my notes and text files uploaded to any server?',
       answer:
-        'No! 100% of the text editing, formatting, and file generation processes take place locally inside your web browser. Your text never leaves your device and is never stored on external servers.',
+        'No. Everything — editing, formatting, and file generation — happens locally inside your browser. Your text never leaves your device and is never stored on any server.',
     },
     {
       question: 'Can I choose between Windows CRLF and Linux LF line breaks?',
       answer:
-        'Yes. The toolbar and status bar include an instant line-ending switch between Windows CRLF (\\r\\n) and Unix/Linux/macOS LF (\\n), preventing syntax errors when deploying scripts across different operating systems.',
+        'Yes. The toolbar has a line-ending switch that converts your text between Windows CRLF (\\r\\n) and Unix/Linux/macOS LF (\\n), so scripts keep working when they move between operating systems.',
     },
     {
       question: 'How do I generate multiple text files in bulk?',
@@ -224,10 +224,10 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-            Specialized Text Processing Suites
+            Free Text Tools
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            Dedicated utilities optimized for specific plain text creation and formatting workflows.
+            Seven simple tools for everyday plain-text work — making .txt files, converting case, sorting lines, building robots.txt files, and comparing text.
           </p>
         </div>
 
@@ -260,7 +260,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-              Generate 1 to 500+ text files simultaneously using dynamic variable substitution and download as a ZIP.
+              Generate 1 to 500 text files at once using dynamic variable substitution and download them as a ZIP.
             </p>
           </Link>
 
@@ -354,9 +354,9 @@ export default function HomePage() {
               <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center">
                 <Globe className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Multi-Encoding Architecture</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Choose the Right Encoding</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                Export text in universal UTF-8, UTF-8 with BOM for Microsoft Excel, UTF-16 Unicode, ANSI Windows-1252, or pure 7-bit ASCII.
+                Pick the encoding your target app needs: plain UTF-8, UTF-8 with BOM for Microsoft Excel, UTF-16, Windows-1252 (ANSI), or plain 7-bit ASCII.
               </p>
             </div>
 
@@ -364,9 +364,9 @@ export default function HomePage() {
               <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Line Ending Control</h3>
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">Pick Your Line Endings</h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                Effortlessly resolve carriage return discrepancies between Windows (CRLF) and Linux/macOS (LF) line terminators.
+                Switch between Windows (CRLF) and Linux/macOS (LF) line endings so scripts and config files work on any system.
               </p>
             </div>
 
@@ -398,20 +398,20 @@ export default function HomePage() {
           <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-2">
             <h4 className="font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base flex items-center gap-2">
               <Cpu className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-              Immune to Format Deprecation
+              Readable Decades From Now
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-              Unlike word processor files that break across versions, a plain text file written decades ago can still be read seamlessly today.
+              Unlike word processor files that break across versions, a plain text file written decades ago can still be opened today.
             </p>
           </div>
 
           <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-2">
             <h4 className="font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base flex items-center gap-2">
               <Zap className="w-4 h-4 text-amber-600 dark:text-amber-400" />
-              Frictionless Scripting & Automation
+              Simple Scripting & Automation
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-              Unix pipes, Python scripts, PowerShell cmdlets, and CI/CD pipelines can ingest and transform .txt files with zero library overhead.
+              Unix pipes, Python scripts, PowerShell cmdlets, and CI/CD pipelines can read and transform .txt files with no extra libraries.
             </p>
           </div>
         </div>
@@ -420,8 +420,8 @@ export default function HomePage() {
       {/* Internal Linking: Featured Technical Guides */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <RelatedGuidesSection
-          title="Authoritative Plain Text Guides"
-          subtitle="Explore our comprehensive tutorials on character sets, line terminators, and developer workflows."
+          title="Plain Text Guides"
+          subtitle="Short, practical guides on encodings, line endings, robots.txt, and everyday text workflows."
           articles={ARTICLES.slice(0, 3)}
         />
       </section>
