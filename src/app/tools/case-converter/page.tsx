@@ -30,7 +30,7 @@ import { downloadTextFile } from '@/lib/encodings';
 
 export default function CaseConverterPage() {
   const [text, setText] = useState(
-    'The quick brown fox jumps over the lazy dog. TXTCRAFT provides precision string transformations!'
+    'The quick brown fox jumps over the lazy dog. TxtCraft converts text case in one click!'
   );
   const [copied, setCopied] = useState(false);
 
@@ -65,7 +65,7 @@ export default function CaseConverterPage() {
     },
     {
       question: 'Does this tool preserve spaces and punctuation?',
-      answer: 'Standard casing formats like UPPERCASE, lowercase, and Title Case preserve all spaces and punctuation. Identifier modes like camelCase and snake_case clean punctuation and convert spacing to appropriate separators.',
+      answer: 'Plain styles like UPPERCASE, lowercase, Title Case, and Sentence case keep every space and punctuation mark exactly as they are. Identifier styles work differently: snake_case, kebab-case, and CONSTANT_CASE rebuild the text from letters and numbers only, dropping punctuation. camelCase and PascalCase remove spaces, hyphens, and underscores, but leave other punctuation (like commas or periods) in place — so clean those off first if you need a true identifier.',
     },
     {
       question: 'When should I use Title Case vs camelCase vs snake_case vs kebab-case?',
@@ -73,7 +73,7 @@ export default function CaseConverterPage() {
     },
     {
       question: 'What happens to numbers and symbols when I convert text?',
-      answer: 'Numbers are never touched — "file2024" keeps its digits in every mode. Standard modes (UPPERCASE, lowercase, Title Case, Sentence case) keep spaces and punctuation exactly as they are. Identifier modes (camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE) remove most punctuation and turn spaces into capital letters, underscores, or hyphens.',
+      answer: 'Numbers are never touched — "file2024" keeps its digits in every mode. Plain styles (UPPERCASE, lowercase, Title Case, Sentence case) keep spaces and punctuation exactly as they are. snake_case, kebab-case, and CONSTANT_CASE drop punctuation and join words with underscores or hyphens. camelCase and PascalCase strip spaces, hyphens, and underscores but leave other punctuation, like commas or periods, in place.',
     },
     {
       question: 'Does changing the case change the meaning of my text?',
@@ -81,7 +81,7 @@ export default function CaseConverterPage() {
     },
     {
       question: 'Can I convert a whole list of names or labels at once?',
-      answer: 'Yes. Paste your list into the box and click the case you want — line breaks are preserved, so each line is converted on its own. This is handy for renaming database columns, cleaning up spreadsheet headers, or standardizing a batch of product titles.',
+      answer: 'Yes — with one caveat. Plain styles like UPPERCASE, lowercase, and Title Case preserve line breaks, so you can paste a whole list and each line converts on its own. Identifier styles (camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE) merge the whole input into a single word, so use those one name at a time. Handy for renaming database columns, cleaning up spreadsheet headers, or standardizing a batch of product titles.',
     },
     {
       question: 'Which case should I use for blog post and video titles?',
@@ -119,7 +119,7 @@ export default function CaseConverterPage() {
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 text-xs font-semibold">
           <Type className="w-3.5 h-3.5" />
-          Text Casing & Identifier Suite
+          Text Case Converter
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
           Online Text Case Converter

@@ -83,7 +83,7 @@ Epsilon Cloud`);
     {
       question: 'Can I add a prefix or suffix to every line at the same time?',
       answer:
-        'Yes! Type your prefix or suffix in the Line Formatting panel and click "Apply Prefix & Suffix". It is applied to every line at once — useful for wrapping list items in quotes, adding bullet markers, or appending file extensions.',
+        'Yes! Type your prefix or suffix in the Line Formatting panel and click "Apply Prefix & Suffix". It is applied to every non-empty line at once — useful for wrapping list items in quotes, adding bullet markers, or appending file extensions.',
     },
     {
       question: 'Is my text uploaded anywhere when I use this tool?',
@@ -121,7 +121,7 @@ Epsilon Cloud`);
           Line Sorter, Filter & Formatter
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-slate-100 tracking-tight">
-          Line Tools & Sorter Studio
+          Line Tools & Sorter
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
           Sort lines alphabetically, remove duplicate lines, trim whitespace, add prefixes,
@@ -341,7 +341,7 @@ Gamma Robotics`}
           </div>
           <div className="rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/80 dark:border-slate-800 p-5 space-y-2">
             <h3 className="text-sm font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wider">
-              After — Remove Duplicates + Sort A→Z
+              After — Remove Duplicates + Remove Empty Lines + Sort A→Z
             </h3>
             <pre className="font-mono text-xs sm:text-sm text-slate-700 dark:text-slate-300 bg-sky-500/5 border border-sky-500/20 rounded-xl p-3 whitespace-pre-wrap">
 {`Alpha Enterprise
@@ -351,7 +351,7 @@ Gamma Robotics`}
           </div>
         </div>
         <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-center max-w-2xl mx-auto">
-          Two clicks removed the repeated line, deleted the blank line, and sorted everything
+          Three clicks removed the repeated line, deleted the blank line, and sorted everything
           alphabetically. This is how most people use the tool: paste a rough list, clean it,
           and paste the result wherever it is needed.
         </p>
@@ -359,7 +359,7 @@ Gamma Robotics`}
 
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
-        title="More Specialized Text Utilities"
+        title="More Text Tools"
         subtitle="Compare document differences, transform word casing, or batch-generate text files."
         excludeHref="/tools/line-tools"
         maxItems={3}
@@ -375,7 +375,7 @@ Gamma Robotics`}
       {/* Internal Linking: Related Guides */}
       <RelatedGuidesSection
         title="Guides on Line Formatting & DevOps Standards"
-        subtitle="Understand CRLF vs LF line endings and best practices for shell script compatibility."
+        subtitle="Learn how line endings work and how to keep your text files readable everywhere."
         articles={ARTICLES.slice(0, 3)}
       />
 
