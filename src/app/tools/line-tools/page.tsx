@@ -124,8 +124,8 @@ Epsilon Cloud`);
           Line Tools & Sorter
         </h1>
         <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl">
-          Sort lines alphabetically, remove duplicate lines, trim whitespace, add prefixes,
-          and number lists instantly.
+          Sort lines alphabetically, remove duplicate lines, trim extra spaces,
+          and add line numbers — free and instant.
         </p>
       </div>
 
@@ -374,7 +374,7 @@ Gamma Robotics`}
 
       {/* Internal Linking: Related Guides */}
       <RelatedGuidesSection
-        title="Guides on Line Formatting & DevOps Standards"
+        title="Guides on Line Formatting & Text Files"
         subtitle="Learn how line endings work and how to keep your text files readable everywhere."
         articles={ARTICLES.slice(0, 3)}
       />
