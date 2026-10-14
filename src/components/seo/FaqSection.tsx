@@ -25,10 +25,10 @@ export default function FaqSection({
   };
 
   return (
-    <section className="py-12 border-t border-slate-200 dark:border-slate-800/80 transition-colors">
+    <section className="py-10 border-t border-slate-200 dark:border-slate-800/80 transition-colors">
       <FaqJsonLd faqs={faqs} />
       <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-3 tracking-tight">
             {title}
           </h2>

@@ -99,19 +99,19 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="space-y-16 pb-16 transition-colors">
+    <div className="space-y-12 pb-12 transition-colors">
       {/* Hero Section */}
-      <section className="relative pt-12 pb-6 overflow-hidden">
+      <section className="relative pt-10 pb-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent pointer-events-none" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            Free Online Text Tools & Workspace
+            Free Online Text Tools
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
-            Free Online Text Tools for{' '}
+            Free TXT File Maker &{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
-              Every Plain Text Task
+              Online Text Tools
             </span>
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -155,7 +155,7 @@ export default function HomePage() {
       {/* 3-Step How-To Section */}
       <HowToJsonLd
         name="How to Make a Text File Online in 3 Steps"
-        description="Create, format, and save your plain text (.txt) document without installing desktop apps."
+        description="No installs or sign-ups \u2014 just type, format, and download your .txt file."
         steps={[
           {
             name: 'Write or Paste in Notepad',
@@ -172,12 +172,12 @@ export default function HomePage() {
         ]}
       />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
             How to Make a Text File Online in 3 Steps
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-2">
-            Create, format, and save your plain text (.txt) document without installing desktop apps.
+            No installs or sign-ups \u2014 just type, format, and download.
           </p>
         </div>
 
@@ -222,7 +222,7 @@ export default function HomePage() {
 
       {/* Specialized Tool Cards Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
             Free Text Tools
           </h2>
@@ -348,8 +348,8 @@ export default function HomePage() {
 
       {/* Feature Highlights Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-teal-50 via-slate-100 to-emerald-50 border border-teal-200/80 p-8 sm:p-12 dark:from-teal-950/40 dark:via-slate-900 dark:to-emerald-950/40 dark:border-teal-500/20 shadow-sm">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="rounded-3xl bg-gradient-to-r from-teal-50 via-slate-100 to-emerald-50 border border-teal-200/80 p-6 sm:p-10 dark:from-teal-950/40 dark:via-slate-900 dark:to-emerald-950/40 dark:border-teal-500/20 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="space-y-3">
               <div className="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-600 dark:text-teal-400 flex items-center justify-center">
                 <Globe className="w-5 h-5" />
@@ -389,9 +389,9 @@ export default function HomePage() {
           Why Plain Text (.txt) Remains the Foundation of Computing
         </h2>
         <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-slate-400">
-          In an era where proprietary cloud documents and complex binary files dominate modern software,
+          While proprietary cloud documents and binary formats come and go,
           plain text files (<code className="text-teal-600 bg-slate-100 dark:text-teal-400 dark:bg-slate-900 px-1.5 py-0.5 rounded font-mono text-xs">.txt</code>)
-          remain the single most durable, portable, and machine-readable data format ever engineered.
+          remain the most durable, portable, and machine-readable format there is.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
