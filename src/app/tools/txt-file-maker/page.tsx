@@ -25,14 +25,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'TXT File Maker - Create & Download Text Files Online',
+  title: 'TXT File Maker - Convert Text to .txt & Download Online',
   description:
-    'Free online TXT file maker and browser notepad. Write, edit, convert text to file, and download plain text (.txt) files instantly. 100% private with UTF-8, ANSI & CRLF/LF support.',
+    'Convert text to a downloadable .txt file in your browser. Choose your filename, encoding and LF/CRLF line endings, then save instantly without an account.',
   alternates: {
     canonical: 'https://txtcraft.site/tools/txt-file-maker',
   },
   openGraph: {
-    title: 'TXT File Maker - Create & Download Text Files Online',
+    title: 'TXT File Maker - Convert Text to .txt & Download Online',
     description:
       'The modern online notepad and plain text creator. Write notes, code snippets, or configuration files and download them as .txt files with custom encodings.',
     url: 'https://txtcraft.site/tools/txt-file-maker',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TXT File Maker - Create & Download Text Files Online',
+    title: 'TXT File Maker - Convert Text to .txt & Download Online',
     description: 'Fast, secure browser notepad and text to file creator with instant .txt download.',
     images: ['/og-image.png'],
   },
