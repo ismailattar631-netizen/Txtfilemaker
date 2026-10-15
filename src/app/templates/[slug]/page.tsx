@@ -13,6 +13,44 @@ import {
   RelatedGuidesSection,
 } from '@/components/seo/InternalLinks';
 
+const TEMPLATE_GUIDANCE: Record<string, { purpose: string; customize: string; check: string }> = {
+  'readme-txt': {
+    purpose: 'A README.txt introduces a project to people who receive the source code or downloaded files. Put the project name, purpose, prerequisites and basic setup steps near the top.',
+    customize: 'Replace example commands with commands you have actually tested. Include the supported operating systems, a contact or issue-reporting path, and the location of any required configuration.',
+    check: 'Before publishing, verify that installation commands work in a clean environment and that filenames, links and version numbers match the current release.',
+  },
+  'humans-txt': {
+    purpose: 'A humans.txt file is a voluntary convention for crediting the people and technologies behind a website. It is informational, not a search-engine ranking signal.',
+    customize: 'Include only names, roles, locations or contact details that contributors have agreed to publish. Keep credits current when the team changes.',
+    check: 'Do not put private email addresses or sensitive infrastructure details in a publicly accessible humans.txt file.',
+  },
+  'gitignore-standard': {
+    purpose: 'A .gitignore file tells Git which untracked files to ignore. It is useful for dependencies, build outputs and local secrets, but it does not remove files already committed to the repository.',
+    customize: 'Keep patterns that match your actual technology stack. For example, a Node.js project may need node_modules/ and .next/, while a Python project may need __pycache__/ and .venv/.',
+    check: 'Review rules before copying them: broad patterns can hide important source files. If a secret was already committed, removing it from tracking does not revoke the exposed credential.',
+  },
+  'apache-license': {
+    purpose: 'The Apache License 2.0 is a permissive software license with conditions for notices, attribution and certain patent rights. The standard license text should not be casually rewritten.',
+    customize: 'Use the official Apache License 2.0 text and follow its appendix instructions for applying the license to your project. Include the correct copyright owner and year where applicable.',
+    check: 'Check whether dependencies or third-party assets have separate license obligations. This template is informational and is not legal advice.',
+  },
+  'robots-txt': {
+    purpose: 'A robots.txt file communicates crawler access rules at the root of a website. It does not protect confidential files and does not guarantee that a URL will be excluded from search results.',
+    customize: 'Replace example domains and paths with your real site structure. Add an absolute Sitemap URL if you publish an XML sitemap.',
+    check: 'Avoid a sitewide Disallow: / unless you deliberately want to restrict crawling. Test the deployed file and confirm that important pages remain accessible.',
+  },
+  'security-txt': {
+    purpose: 'A security.txt file provides a clear channel for reporting security vulnerabilities. It is most useful when the contact address is actively monitored.',
+    customize: 'Set a working security contact and a realistic expiration date. Follow the relevant security.txt format when publishing it under /.well-known/security.txt.',
+    check: 'Do not promise response times or disclosure procedures your organization cannot meet. Verify that the contact method actually works.',
+  },
+  'todo-txt': {
+    purpose: 'A plain-text task list is easy to edit and share across systems without proprietary software.',
+    customize: 'Use a consistent task format and include deadlines or priorities only when they are meaningful for your workflow.',
+    check: 'Avoid mixing confidential personal data into a task list that will be shared publicly.',
+  },
+};
+
 export async function generateStaticParams() {
   return TEMPLATES.map((t) => ({ slug: t.slug }));
 }
@@ -109,6 +147,16 @@ export default function TemplateDetailPage({
           {template.description}
         </p>
       </div>
+
+      {/* Template-specific guidance for visitors and search engines */}
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/70 space-y-4">
+        <h2 className="text-xl font-bold text-slate-900 dark:text-white">How to use this {template.defaultFilename} template</h2>
+        <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">{TEMPLATE_GUIDANCE[template.slug]?.purpose ?? `Use this ${template.title.toLowerCase()} as a starting point. Review its sample content and adapt each section to your own project before downloading.`}</p>
+        <h3 className="font-semibold text-slate-900 dark:text-white">What to customize</h3>
+        <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">{TEMPLATE_GUIDANCE[template.slug]?.customize ?? `Update the example names, paths and values for your intended use. Save the result as ${template.defaultFilename} using ${template.recommendedEncoding} when compatible with your target system.`}</p>
+        <h3 className="font-semibold text-slate-900 dark:text-white">Before you publish</h3>
+        <p className="text-sm leading-7 text-slate-600 dark:text-slate-300">{TEMPLATE_GUIDANCE[template.slug]?.check ?? 'Inspect the final file for placeholder content, sensitive information and formatting issues. Test it in the application or environment where you plan to use it.'}</p>
+      </section>
 
       {/* Editor with Template loaded */}
       <div className="pt-2">
