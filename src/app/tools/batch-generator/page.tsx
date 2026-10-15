@@ -415,6 +415,18 @@ This is an automated batch-generated text document for testing and data pipeline
         </div>
       </div>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-batch-generator" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-batch-generator" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">When batch text generation is useful</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>Batch generation works well for repetitive text files such as sample records, draft configurations and numbered checklists. Define a predictable filename pattern before generating so the exported archive is easy to inspect.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> a record_{id}.txt naming pattern can distinguish generated files. Review a small sample of the generated output first, especially if your template contains placeholders or special characters.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Avoid putting passwords, API tokens or real customer records into test templates. Check generated filenames for collisions and verify the downloaded ZIP before using it in a production workflow.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="More Essential Text Utilities"
