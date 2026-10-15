@@ -31,7 +31,7 @@ export default function TemplatesPage() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 sm:space-y-12 transition-colors">
       <div className="space-y-3">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20 text-xs font-semibold">
           <FolderOpen className="w-3.5 h-3.5" />
@@ -83,7 +83,7 @@ export default function TemplatesPage() {
         {filteredTemplates.map((template) => (
           <div
             key={template.slug}
-            className="group rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-teal-500 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/40 p-5 flex flex-col justify-between transition-all hover:shadow-xl hover:shadow-teal-500/5 space-y-4"
+            className="group rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-teal-500 dark:bg-slate-900/70 dark:border-slate-800 dark:hover:border-teal-500/40 p-5 flex flex-col justify-between transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-500/10 space-y-4"
           >
             <div className="space-y-2.5">
               <div className="flex items-center justify-between">

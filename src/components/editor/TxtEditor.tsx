@@ -150,7 +150,7 @@ export default function TxtEditor({
   return (
     <div
       ref={containerRef}
-      className={`rounded-2xl border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950 overflow-hidden shadow-xl transition-all duration-200 flex flex-col ${
+      className={`rounded-2xl border border-slate-200/90 bg-white dark:border-slate-700/80 dark:bg-slate-950 overflow-hidden shadow-2xl shadow-slate-900/10 dark:shadow-black/30 transition-all duration-200 flex flex-col ${
         isFullscreen ? 'fixed inset-4 z-50 rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)]' : className
       }`}
       onDragOver={(e) => {
@@ -188,7 +188,7 @@ export default function TxtEditor({
       />
 
       {/* View Options Bar */}
-      <div className="bg-slate-50 border-b border-slate-200 px-4 py-1.5 flex items-center justify-between text-xs text-slate-500 dark:bg-slate-900/60 dark:border-slate-800/80 dark:text-slate-400">
+      <div className="bg-slate-50/90 border-b border-slate-200 px-4 py-2 flex items-center justify-between text-xs text-slate-500 dark:bg-slate-900/60 dark:border-slate-800/80 dark:text-slate-400">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setWordWrap(!wordWrap)}
@@ -265,7 +265,7 @@ export default function TxtEditor({
             whiteSpace: wordWrap ? 'pre-wrap' : 'pre',
             wordBreak: wordWrap ? 'break-word' : 'normal',
           }}
-          className="flex-1 w-full bg-white text-slate-900 placeholder-slate-400 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-600 font-mono p-3 outline-none resize-none overflow-auto custom-scrollbar leading-6"
+          className="flex-1 w-full bg-white text-slate-900 placeholder-slate-400 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-600 font-mono p-4 outline-none resize-none overflow-auto custom-scrollbar leading-6"
         />
       </div>
 
