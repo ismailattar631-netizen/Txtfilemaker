@@ -290,6 +290,18 @@ export default function RobotsTxtGeneratorPage() {
         </div>
       </div>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-robots-txt-generator" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-robots-txt-generator" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Robots.txt controls crawling, not guaranteed indexing</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>Robots.txt is a set of crawler access instructions. Disallow rules can prevent compliant bots from fetching paths, but they do not reliably remove an already known URL from search results. Use an appropriate noindex directive on crawlable pages when removal from indexing is the goal.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> User-agent: * followed by Disallow: /private/ requests that compliant crawlers avoid that directory. Add a Sitemap directive with the absolute sitemap URL so crawlers can discover the published URL list.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Test rules against the final deployed robots.txt. A broad Disallow: / can block crawling of the entire site, and blocking a page may prevent Google from seeing a noindex tag on that page.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="More Webmaster & Plain Text Tools"
