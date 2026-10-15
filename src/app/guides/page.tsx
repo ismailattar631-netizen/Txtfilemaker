@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 export default function GuidesPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 sm:space-y-12 transition-colors">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
@@ -75,7 +75,7 @@ export default function GuidesPage() {
           <Link
             key={article.slug}
             href={`/guides/${article.slug}`}
-            className="group rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-teal-500 dark:bg-slate-900/60 dark:border-slate-800 dark:hover:border-teal-500/40 p-6 flex flex-col justify-between transition-all hover:shadow-xl hover:shadow-teal-500/5 space-y-4"
+            className="group rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-teal-500 dark:bg-slate-900/70 dark:border-slate-800 dark:hover:border-teal-500/40 p-6 flex flex-col justify-between transition-all hover:-translate-y-0.5 hover:shadow-xl hover:shadow-teal-500/10 space-y-4"
           >
             <div className="space-y-3">
               <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
