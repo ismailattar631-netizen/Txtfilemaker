@@ -289,6 +289,18 @@ Coffee & tea included.`}
         </div>
       </section>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-markdown-to-txt" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-markdown-to-txt" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">What you lose when converting Markdown</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>Plain-text conversion is helpful when pasting notes into systems that do not support Markdown. Headings, links, code fences and emphasis are formatting instructions, not ordinary prose; decide whether the output needs readable text or exact source syntax.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> a Markdown heading such as # Release notes can become a simple heading line, while a bold marker around a word is removed in the plain-text version. Review lists, tables and links after conversion.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Complex tables, nested lists and embedded HTML may require manual cleanup. If your destination requires Markdown syntax, keep the original .md file rather than converting it to .txt.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="Related Text Utilities"
