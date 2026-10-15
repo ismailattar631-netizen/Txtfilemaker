@@ -14,6 +14,31 @@ import {
 } from '@/components/seo/InternalLinks';
 
 const TEMPLATE_GUIDANCE: Record<string, { purpose: string; customize: string; check: string }> = {
+  'mit-license': {
+    purpose: 'The MIT License permits broad reuse of software subject to keeping its copyright and permission notice. It is not the same as placing work in the public domain.',
+    customize: 'Keep the standard license terms intact and insert the correct copyright year and rights holder in the notice.',
+    check: 'Review third-party dependencies and assets separately. This template is informational and not legal advice.',
+  },
+  'changelog-standard': {
+    purpose: 'A changelog helps users understand what changed between software releases. Group changes by version and describe their impact in plain language.',
+    customize: 'Record release dates, meaningful additions, fixes, breaking changes and migration steps where needed.',
+    check: 'Verify each version number and do not claim a bug is fixed until the fix has been tested.',
+  },
+  'meeting-notes': {
+    purpose: 'Meeting notes capture decisions, owners and follow-up actions in a format that remains easy to search and share.',
+    customize: 'Record the meeting date, attendees, agenda, decisions and clear action items with owners and deadlines.',
+    check: 'Confirm decisions with participants before distributing notes, and remove sensitive information when sharing broadly.',
+  },
+  'ascii-art-borders': {
+    purpose: 'Text borders help separate sections in terminal output, README files and logs without relying on rich formatting.',
+    customize: 'Choose plain ASCII characters for maximum compatibility or Unicode box-drawing characters for a more polished appearance.',
+    check: 'Unicode borders can render differently across fonts and terminals. Preview the final text in the destination environment.',
+  },
+  'csv-plain-table': {
+    purpose: 'A monospace text table makes small data summaries easier to read in logs, terminals and plain-text reports.',
+    customize: 'Update column widths and align values consistently. Prefer real CSV or TSV files when another program needs to parse the data.',
+    check: 'Alignment may break with proportional fonts or wide Unicode characters. Verify totals and calculations independently.',
+  },
   'readme-txt': {
     purpose: 'A README.txt introduces a project to people who receive the source code or downloaded files. Put the project name, purpose, prerequisites and basic setup steps near the top.',
     customize: 'Replace example commands with commands you have actually tested. Include the supported operating systems, a contact or issue-reporting path, and the location of any required configuration.',
