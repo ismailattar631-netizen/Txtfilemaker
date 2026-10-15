@@ -99,33 +99,46 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="space-y-12 pb-12 transition-colors">
+    <div className="space-y-12 pb-16 transition-colors">
       {/* Hero Section */}
-      <section className="relative pt-10 pb-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-500/10 via-transparent to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <section className="relative isolate pt-12 sm:pt-16 pb-10 overflow-hidden">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-teal-500/10 via-sky-500/[0.03] to-transparent pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-600 dark:text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
             Free Online Text Tools
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-slate-100 tracking-tight max-w-4xl mx-auto leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight max-w-4xl mx-auto leading-[1.12]">
             Free TXT File Maker &{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
               Online Text Tools
             </span>
           </h1>
-          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
             Your all-in-one browser workspace for plain text. Create and download .txt files, convert text casing, clean and deduplicate lines, compare text diffs, and generate files in batch with 100% client-side privacy.
           </p>
         </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <a href="#text-editor" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-teal-500 px-5 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-teal-500/20 transition hover:bg-teal-400">
+              <FileText className="h-4 w-4" /> Start creating <ArrowRight className="h-4 w-4" />
+            </a>
+            <Link href="/tools/txt-file-maker" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-500 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-teal-500">
+              Explore TXT File Maker
+            </Link>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
+            <span className="inline-flex items-center gap-1.5"><Zap className="h-3.5 w-3.5 text-teal-500" /> Instant download</span>
+            <span className="inline-flex items-center gap-1.5"><Shield className="h-3.5 w-3.5 text-teal-500" /> Browser-based editing</span>
+            <span className="inline-flex items-center gap-1.5"><Smartphone className="h-3.5 w-3.5 text-teal-500" /> Mobile friendly</span>
+          </div>
       </section>
 
       {/* Main Interactive Studio Editor */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+      <section id="text-editor" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <TxtEditor
           initialText={editorText}
           initialFilename={currentFilename}
-          className="shadow-2xl ring-1 ring-slate-200 dark:ring-slate-800"
+          className="shadow-2xl shadow-slate-900/10 dark:shadow-black/40 ring-1 ring-slate-200 dark:ring-teal-500/20"
         />
 
         {/* Quick Template Switcher Pills */}
