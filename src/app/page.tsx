@@ -109,13 +109,13 @@ export default function HomePage() {
             Free Online Text Tools
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 dark:text-white tracking-tight max-w-4xl mx-auto leading-[1.12]">
-            Free TXT File Maker &{' '}
+            Free Online Text Tools &{' '}
             <span className="bg-gradient-to-r from-teal-500 to-emerald-500 bg-clip-text text-transparent">
-              Online Text Tools
+              Browser Text Studio
             </span>
           </h1>
           <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Your all-in-one browser workspace for plain text. Create and download .txt files, convert text casing, clean and deduplicate lines, compare text diffs, and generate files in batch with 100% client-side privacy.
+            Your browser workspace for plain text. Edit notes, convert text case, clean and sort lines, compare text differences, or generate TXT files in bulk. For a dedicated text-to-file workflow, open our TXT File Maker.
           </p>
         </div>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
@@ -123,7 +123,7 @@ export default function HomePage() {
               <FileText className="h-4 w-4" /> Start creating <ArrowRight className="h-4 w-4" />
             </a>
             <Link href="/tools/txt-file-maker" className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-teal-500 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:border-teal-500">
-              Explore TXT File Maker
+              Open Dedicated TXT File Maker
             </Link>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 pt-1 text-xs font-medium text-slate-500 dark:text-slate-400">
