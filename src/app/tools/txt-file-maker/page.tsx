@@ -194,7 +194,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 relative overflow-hidden">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3 relative overflow-hidden">
             <div className="w-10 h-10 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black text-lg">
               1
             </div>
@@ -206,7 +206,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 relative overflow-hidden">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3 relative overflow-hidden">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg">
               2
             </div>
@@ -218,7 +218,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3 relative overflow-hidden">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3 relative overflow-hidden">
             <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-lg">
               3
             </div>
@@ -289,7 +289,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-          <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-2">
+          <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-2">
             <h4 className="font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base flex items-center gap-2">
               <Smartphone className="w-4 h-4 text-teal-600 dark:text-teal-400" />
               Zero Installation & Mobile Ready
@@ -299,7 +299,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
             </p>
           </div>
 
-          <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-2">
+          <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-2">
             <h4 className="font-semibold text-slate-900 dark:text-slate-200 text-sm sm:text-base flex items-center gap-2">
               <Lock className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               Guaranteed Plain Text
@@ -328,7 +328,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
 
         <div className="space-y-6">
           {/* Query 1: How to create a TXT file online for free */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0" />
               How to create a TXT file online for free
@@ -339,7 +339,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
           </div>
 
           {/* Query 2: Best free TXT file maker for Windows, Mac, Android and iPhone */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <Laptop className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
               Best free TXT file maker for Windows, Mac, Android and iPhone
@@ -350,7 +350,7 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
           </div>
 
           {/* Query 3: Convert notes to a plain text file without installing software */}
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
               <Zap className="w-5 h-5 text-sky-600 dark:text-sky-400 flex-shrink-0" />
               Convert notes to a plain text file without installing software
