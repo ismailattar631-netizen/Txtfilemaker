@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://txtcraft.site'),
   title: {
-    default: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
+    default: 'TxtCraft - Free Online Text Tools Studio & Browser Notepad',
     template: '%s | TxtCraft',
   },
   description:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: 'https://txtcraft.site',
   },
   openGraph: {
-    title: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
+    title: 'TxtCraft - Free Online Text Tools Studio & Browser Notepad',
     description:
       'Free online TXT file maker, notepad, and plain text tools suite. Create, format, convert, and download .txt files with UTF-8, ANSI, and CRLF/LF support.',
     url: 'https://txtcraft.site',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TxtCraft - Free Online TXT File Maker, Notepad & Text Tools',
+    title: 'TxtCraft - Free Online Text Tools Studio & Browser Notepad',
     description:
       'Free online TXT file maker, notepad, and plain text tools suite. Create, format, convert, and download .txt files with instant browser downloads.',
     images: ['/og-image.png'],
