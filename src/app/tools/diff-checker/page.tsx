@@ -66,7 +66,7 @@ Region: us-east-1`);
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 transition-colors">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-10 sm:space-y-12 transition-colors">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: 'https://txtcraft.site' },
@@ -172,7 +172,7 @@ Region: us-east-1`);
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center font-black text-lg">
               1
             </div>
@@ -184,7 +184,7 @@ Region: us-east-1`);
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg">
               2
             </div>
@@ -196,7 +196,7 @@ Region: us-east-1`);
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-lg">
               3
             </div>
@@ -221,7 +221,7 @@ Region: us-east-1`);
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-4">
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-4">
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
             Example 1: Server config update
           </h3>
@@ -256,7 +256,7 @@ Region: us-east-1`);
           </p>
         </div>
 
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/60 dark:border-slate-800 space-y-4">
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm dark:bg-slate-900/70 dark:border-slate-800 space-y-4">
           <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
             Example 2: Shopping list changes
           </h3>
