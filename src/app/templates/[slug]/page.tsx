@@ -34,7 +34,7 @@ const TEMPLATE_GUIDANCE: Record<string, { purpose: string; customize: string; ch
     customize: 'Use the official Apache License 2.0 text and follow its appendix instructions for applying the license to your project. Include the correct copyright owner and year where applicable.',
     check: 'Check whether dependencies or third-party assets have separate license obligations. This template is informational and is not legal advice.',
   },
-  'robots-txt': {
+  'robots-txt-standard': {
     purpose: 'A robots.txt file communicates crawler access rules at the root of a website. It does not protect confidential files and does not guarantee that a URL will be excluded from search results.',
     customize: 'Replace example domains and paths with your real site structure. Add an absolute Sitemap URL if you publish an XML sitemap.',
     check: 'Avoid a sitewide Disallow: / unless you deliberately want to restrict crawling. Test the deployed file and confirm that important pages remain accessible.',
@@ -44,7 +44,7 @@ const TEMPLATE_GUIDANCE: Record<string, { purpose: string; customize: string; ch
     customize: 'Set a working security contact and a realistic expiration date. Follow the relevant security.txt format when publishing it under /.well-known/security.txt.',
     check: 'Do not promise response times or disclosure procedures your organization cannot meet. Verify that the contact method actually works.',
   },
-  'todo-txt': {
+  'todo-txt-format': {
     purpose: 'A plain-text task list is easy to edit and share across systems without proprietary software.',
     customize: 'Use a consistent task format and include deadlines or priorities only when they are meaningful for your workflow.',
     check: 'Avoid mixing confidential personal data into a task list that will be shared publicly.',
