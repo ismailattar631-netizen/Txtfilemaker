@@ -357,6 +357,18 @@ Gamma Robotics`}
         </p>
       </section>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-line-tools" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-line-tools" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Cleaning lists without losing important data</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>Line utilities help prepare keyword lists, CSV-like exports, log excerpts and other newline-separated records. Sorting and deduplication are useful for simple lists, but order and repetition sometimes carry meaning.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> when a copied list contains apple, banana, apple on separate lines, deduplication can remove the repeated apple. If the order matters for a checklist or script, keep a copy of the original before sorting.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Do not remove duplicates from transaction records or event logs without checking whether repeated lines represent distinct events. Line-based cleaning is not a substitute for a structured CSV parser.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="More Text Tools"

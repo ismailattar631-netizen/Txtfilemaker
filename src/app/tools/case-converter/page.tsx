@@ -267,6 +267,18 @@ export default function CaseConverterPage() {
         </p>
       </div>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-case-converter" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-case-converter" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Choose the right case for the destination</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>Use sentence case for ordinary prose, title case for many headings, snake_case for identifiers in languages such as Python, and kebab-case for readable URL slugs. A case converter changes letter casing; it does not rewrite grammar.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> the words customer order ID can become customerOrderId for a JavaScript variable or customer_order_id for a Python-style identifier. Keep your team's existing naming conventions consistent.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Automatic title casing may not match every editorial style guide, especially for acronyms, brand names and small words. Always proofread names and headings after conversion.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="More Text Transformation Tools"

@@ -288,6 +288,18 @@ Region: us-east-1`);
         </div>
       </section>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-diff-checker" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-diff-checker" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">How to review a text difference accurately</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>A text diff is useful for comparing configuration revisions, meeting-note edits and short code snippets. Review both added and removed lines: a seemingly small change to a number or setting may have a large effect.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> changing Timeout: 30s to Timeout: 60s should be reviewed as a setting change, not just a visual highlight. Check nearby unchanged lines for context before accepting a revision.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> Line-oriented comparisons can show an entire line as changed when only one character differs. A diff identifies differences; it cannot determine whether a new value is correct or safe.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="Related Text Processing Tools"

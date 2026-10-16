@@ -372,6 +372,18 @@ Click 'Download' in the toolbar (or press Ctrl+S) to save as a .txt file!`}
         </div>
       </section>
 
+      {/* Task-specific editorial guidance */}
+      <section aria-labelledby="practical-guidance-txt-file-maker" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <h2 id="practical-guidance-txt-file-maker" className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">TXT file encoding and portability</h2>
+          <div className="mt-4 space-y-4 text-sm sm:text-base leading-7 text-slate-600 dark:text-slate-300">
+            <p>For ordinary notes and configuration files, UTF-8 is a practical default because it supports international characters. Choose CRLF when a Windows-specific workflow requires it, and LF for Unix-style scripts or repositories. A .txt file does not preserve bold text, fonts, images or document layout.</p>
+            <p><strong className="text-slate-900 dark:text-white">Practical example:</strong> paste meeting notes, name the file meeting-notes.txt, keep UTF-8, then download it. If a downstream system expects a particular encoding or newline format, confirm its requirements before exporting.</p>
+            <p><strong className="text-slate-900 dark:text-white">Important limitation:</strong> A file named .txt is still plain text: changing the extension does not convert a Word or PDF document into a compatible format. If you need rich formatting, use a document editor instead.</p>
+          </div>
+        </div>
+      </section>
+
       {/* Internal Linking: Related Tools */}
       <RelatedToolsSection
         title="Explore More Text Tools"

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { FileText, Shield, Zap, Mail } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About TxtCraft Team',
-  description: 'Learn what TxtCraft is, how it works, and how the TxtCraft Team handles your text.',
+  title: 'About TxtCraft - Free Browser Text Utilities',
+  description: 'Learn what TxtCraft offers, who its text utilities help, how browser-based tools work and where to report issues or suggest improvements.',
   alternates: {
     canonical: 'https://txtcraft.site/about',
   },
@@ -81,6 +81,25 @@ export default function AboutPage() {
           <a href="/privacy" className="text-teal-600 dark:text-teal-400 underline underline-offset-2">
             Privacy Policy
           </a>.
+        </p>
+
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Which Tool Should You Use?</h2>
+        <p className="text-slate-600 dark:text-slate-400">
+          If you need to save notes as a downloadable file, start with the <a className="text-teal-600 dark:text-teal-400 underline" href="/tools/txt-file-maker">TXT File Maker</a>.
+          For consistent variable names or headings, use the <a className="text-teal-600 dark:text-teal-400 underline" href="/tools/case-converter">Case Converter</a>.
+          To clean a newline-separated list, try <a className="text-teal-600 dark:text-teal-400 underline" href="/tools/line-tools">Line Tools</a>.
+          The <a className="text-teal-600 dark:text-teal-400 underline" href="/tools/diff-checker">Diff Checker</a> helps review revisions, while the <a className="text-teal-600 dark:text-teal-400 underline" href="/tools/batch-generator">Batch Generator</a> is for repetitive text-file exports.
+        </p>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Our Approach to Examples and Templates</h2>
+        <p className="text-slate-600 dark:text-slate-400">
+          The site includes example content so you can test a tool before using your own text. Templates are starting points, not guaranteed production-ready configuration or legal documents.
+          Review generated files, replace placeholder values and test the output in your target application before publishing it.
+          Technical standards and third-party software can change, so confirm critical requirements against the relevant official documentation.
+        </p>
+        <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Corrections and Feedback</h2>
+        <p className="text-slate-600 dark:text-slate-400">
+          If a tool produces an unexpected result, include the tool name, browser, expected result and a non-sensitive sample that reproduces the issue when contacting us.
+          Please do not email passwords, private documents or other confidential data in a bug report.
         </p>
 
         <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">Contact</h2>
