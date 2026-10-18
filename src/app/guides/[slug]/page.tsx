@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!article) return {};
 
   return {
-    title: `${article.title} - TxtCraft Guides`,
+    title: article.title,
     description: article.excerpt,
     keywords: article.tags,
     alternates: {
