@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
@@ -66,6 +67,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'google-adsense-account': 'ca-pub-4832541917740546',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
@@ -86,23 +90,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4832541917740546"
-          crossOrigin="anonymous"
-        />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-44KQ7ELTG7"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-44KQ7ELTG7');`,
-          }}
-        />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function() {
@@ -125,6 +112,23 @@ gtag('config', 'G-44KQ7ELTG7');`,
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Script
+          id="gtag-src"
+          src="https://www.googletagmanager.com/gtag/js?id=G-44KQ7ELTG7"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-44KQ7ELTG7');`}
+        </Script>
+        <Script
+          id="adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4832541917740546"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );
